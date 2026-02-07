@@ -1,0 +1,30 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-g g": [
+        "task::Spawn",
+        { "task_name": "Git", "reveal_target": "center" },
+      ],
+      "cmd-g f": [
+        "task::Spawn",
+        { "task_name": "Git File History", "reveal_target": "center" },
+      ],
+      "cmd-f f": [
+        "task::Spawn",
+        { "task_name": "Find Files", "reveal_target": "center" },
+      ],
+      "cmd-f g": [
+        "task::Spawn",
+        { "task_name": "Find in Files", "reveal_target": "center" },
+      ],
+    },
+  },
+]

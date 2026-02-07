@@ -1,0 +1,35 @@
+// Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
+[
+  {
+    "label": "Git",
+    "command": "ptyxis --execute \"lazygit -p $ZED_WORKTREE_ROOT\"",
+    "hide": "on_success",
+    "shell": {
+      "program": "fish",
+    },
+  },
+  {
+    "label": "Git File History",
+    "command": "ptyxis --execute \"lazygit -f $ZED_RELATIVE_FILE\"",
+    "hide": "on_success",
+    "shell": {
+      "program": "fish",
+    },
+  },
+  {
+    "label": "Find Files",
+    "command": "tv files | read -alz res; and zed $res",
+    "hide": "on_success",
+    "shell": {
+      "program": "fish",
+    },
+  },
+  {
+    "label": "Find in Files",
+    "command": "tv text | read -alz res; and zed $res",
+    "hide": "on_success",
+    "shell": {
+      "program": "fish",
+    },
+  },
+]
