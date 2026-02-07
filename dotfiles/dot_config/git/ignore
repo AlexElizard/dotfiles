@@ -1,0 +1,9 @@
+## https://github.com/github/gitignore
+
+## JavaScript
+node_modules/
+
+## Python
+__pycache__/
+.ipynb_checkpoints/
+.venv/

@@ -1,0 +1,21 @@
+## https://git-scm.com/docs/git-config
+
+[core]
+	editor = zed --wait
+
+[credential]
+	helper = libsecret
+
+[fetch]
+    all = true
+	prune = true
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[user]
+	email = {{ .email }}
+	name = {{ .name }}
