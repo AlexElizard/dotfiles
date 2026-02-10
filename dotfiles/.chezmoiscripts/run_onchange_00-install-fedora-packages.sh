@@ -30,3 +30,9 @@ flatpak install flathub \
 echo "Install uv tool packages"
 uv tool install copier
 uv tool install go-task-bin
+uv tool install sqlit-tui[clickhouse,postgres,mssql]
+
+echo "Install binary packages"
+if ! hash zed 2> /dev/null; then
+    curl -f https://zed.dev/install.sh | sh
+fi
