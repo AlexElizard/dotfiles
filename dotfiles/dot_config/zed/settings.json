@@ -15,8 +15,10 @@
     "dark": "One Dark",
   },
   "auto_install_extensions": {
+    "dockerfile": true,
     "html": true,
     "lua": true,
+    "sql": true,
     "toml": true,
   },
   "git_panel": {
