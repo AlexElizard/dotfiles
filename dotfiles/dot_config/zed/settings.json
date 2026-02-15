@@ -56,6 +56,13 @@
   "project_panel": {
     "hide_gitignore": true,
   },
+  "ssh_connections": [
+    {
+      "host": "unraid.local",
+      "username": "root",
+      "projects": [{ "paths": ["/mnt/user/appdata"] }],
+    },
+  ],
   "terminal": {
     "shell": {
       "program": "fish",
