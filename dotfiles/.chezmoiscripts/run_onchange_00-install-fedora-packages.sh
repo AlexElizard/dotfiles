@@ -7,6 +7,7 @@ sudo dnf copr enable che/nerd-fonts
 echo "Install RPM packages"
 sudo dnf install \
     fish \
+    fuse-libs \
     git-credential-libsecret \
     google-chrome-stable \
     lazygit \
@@ -24,6 +25,7 @@ flatpak install flathub \
     com.mattermost.Desktop \
     com.mattjakeman.ExtensionManager \
     io.podman_desktop.PodmanDesktop \
+    it.mijorus.gearlever \
     md.obsidian.Obsidian \
     org.telegram.desktop
 
