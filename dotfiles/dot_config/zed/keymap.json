@@ -13,18 +13,9 @@
         "task::Spawn",
         { "task_name": "Git", "reveal_target": "center" },
       ],
-      "cmd-g f": [
-        "task::Spawn",
-        { "task_name": "Git File History", "reveal_target": "center" },
-      ],
-      "cmd-f f": [
-        "task::Spawn",
-        { "task_name": "Find Files", "reveal_target": "center" },
-      ],
-      "cmd-f g": [
-        "task::Spawn",
-        { "task_name": "Find in Files", "reveal_target": "center" },
-      ],
+      "cmd-g f": "git::FileHistory", // Git File history
+      "cmd-f f": "file_finder::Toggle", // Find File
+      "cmd-f g": "pane::DeploySearch", // File Grep (find in file)
     },
   },
 ]
