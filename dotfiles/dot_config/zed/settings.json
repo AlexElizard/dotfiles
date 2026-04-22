@@ -7,13 +7,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark",
-  },
   "auto_install_extensions": {
     "dockerfile": true,
     "html": true,
@@ -26,30 +19,41 @@
   },
   "git_hosting_providers": [
     {
-      "base_url": "https://adm-dwh-git.dns-shop.ru",
-      "name": "DNS Tech",
       "provider": "gitlab",
+      "name": "DNS Tech",
+      "base_url": "https://adm-dwh-git.dns-shop.ru",
     },
   ],
   // https://zed.dev/docs/configuring-languages#choosing-language-servers
   "languages": {
     "Python": {
-      "language_servers": ["ty", "ruff"],
+      "language_servers": ["ruff", "ty"],
     },
   },
   "lsp": {
     "yaml-language-server": {
       "settings": {
-        "schemas": {
-          "https://squidfunk.github.io/mkdocs-material/schema.json": [
-            "**/mkdocs.yml",
-          ],
+        "yaml": {
+          "schemas": {
+            "https://squidfunk.github.io/mkdocs-material/schema.json": [
+              "**/mkdocs.yml",
+            ],
+            "https://taskfile.dev/schema.json": [
+              "**/taskfiles/*.yml",
+              "**/taskfiles/*.yaml",
+              "**/Taskfile.yml",
+              "**/taskfile.yml",
+              "**/Taskfile.yaml",
+              "**/taskfile.yaml",
+              "**/Taskfile.dist.yml",
+              "**/taskfile.dist.yml",
+              "**/Taskfile.dist.yaml",
+              "**/taskfile.dist.yaml",
+            ],
+          },
         },
       },
     },
-  },
-  "project_panel": {
-    "hide_gitignore": true,
   },
   "ssh_connections": [
     {
