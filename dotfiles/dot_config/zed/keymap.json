@@ -9,13 +9,13 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-g g": [
+      "super-g g": [
         "task::Spawn",
         { "task_name": "Git", "reveal_target": "center" },
       ],
-      "cmd-g f": "git::FileHistory", // Git File history
-      "cmd-f f": "file_finder::Toggle", // Find File
-      "cmd-f g": "pane::DeploySearch", // File Grep (find in file)
+      "super-g f": "git::FileHistory", // Git File history
+      "super-f f": "file_finder::Toggle", // Find File
+      "super-f g": "pane::DeploySearch", // File Grep (find in file)
     },
   },
 ]
