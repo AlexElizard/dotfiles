@@ -39,8 +39,6 @@
               "**/mkdocs.yml",
             ],
             "https://taskfile.dev/schema.json": [
-              "**/taskfiles/*.yml",
-              "**/taskfiles/*.yaml",
               "**/Taskfile.yml",
               "**/taskfile.yml",
               "**/Taskfile.yaml",
@@ -49,6 +47,8 @@
               "**/taskfile.dist.yml",
               "**/Taskfile.dist.yaml",
               "**/taskfile.dist.yaml",
+              // Custom directory
+              "**/taskfiles/*.yaml",
             ],
           },
         },
