@@ -21,7 +21,6 @@ sudo dnf install \
 echo "Install Flatpak packages"
 flatpak install flathub \
     be.alexandervanhee.gradia \
-    com.github.IsmaelMartinez.teams_for_linux \
     com.mattermost.Desktop \
     com.mattjakeman.ExtensionManager \
     io.podman_desktop.PodmanDesktop \
