@@ -9,6 +9,7 @@
 {
   "auto_install_extensions": {
     "dockerfile": true,
+    "git-firefly": true,
     "html": true,
     "lua": true,
     "sql": true,
