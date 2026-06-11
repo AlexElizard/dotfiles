@@ -1,9 +1,15 @@
 ## https://github.com/github/gitignore
 
-## JavaScript
+## [Compose]
+compose.override.yaml
+
+## [JavaScript]
 node_modules/
 
-## Python
+## [Task]
+.task/
+
+## [Python]
 __pycache__/
 .ipynb_checkpoints/
 .venv/
