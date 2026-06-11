@@ -17,5 +17,8 @@
 	rebase = true
 
 [user]
-	email = {{ .email }}
-	name = {{ .name }}
+	email = alexelizard@gmail.com
+	name = Aleksei Bibus
+
+[includeIf "hasconfig:remote.*.url:*.dns-shop.ru/**"]
+    path = ~/.config/git/overrides/dns-shop
