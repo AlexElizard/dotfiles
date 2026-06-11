@@ -1,5 +1,8 @@
 ## https://git-scm.com/docs/git-config
 
+[branch]
+	sort = -committerdate
+
 [core]
 	editor = zed --wait
 
@@ -7,18 +10,30 @@
 	helper = libsecret
 
 [fetch]
-    all = true
+	all = true
 	prune = true
 
 [init]
 	defaultBranch = main
 
+[merge]
+	conflictStyle = zdiff3
+
 [pull]
 	rebase = true
+
+[push]
+	autoSetupRemote = true
+
+[rebase]
+	autoStash = true
+
+[rerere]
+	enabled = true
 
 [user]
 	email = alexelizard@gmail.com
 	name = Aleksei Bibus
 
 [includeIf "hasconfig:remote.*.url:*.dns-shop.ru/**"]
-    path = ~/.config/git/overrides/dns-shop
+	path = ~/.config/git/overrides/dns-shop
