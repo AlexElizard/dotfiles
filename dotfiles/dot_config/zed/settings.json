@@ -7,6 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "effort": "xhigh",
+      "provider": "openai-subscribed",
+      "model": "gpt-5.5",
+      "enable_thinking": true,
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
   "auto_install_extensions": {
     "dockerfile": true,
     "git-firefly": true,
