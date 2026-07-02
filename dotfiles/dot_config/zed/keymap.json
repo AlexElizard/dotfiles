@@ -16,7 +16,7 @@
       "super-g h": "git_graph::Open", // Git History
       "super-g f": "git::FileHistory", // Git File history
       "super-f f": "file_finder::Toggle", // Find File
-      "super-f g": "pane::DeploySearch", // File Grep (find in file)
+      "super-f g": "text_finder::Toggle", // File Grep (find in file)
     },
   },
 ]
