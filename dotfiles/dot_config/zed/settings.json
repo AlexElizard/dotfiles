@@ -18,6 +18,15 @@
     "favorite_models": [],
     "model_parameters": [],
   },
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "plan",
+        "model": "sonnet",
+      },
+      "type": "registry",
+    },
+  },
   "auto_install_extensions": {
     "dockerfile": true,
     "git-firefly": true,
