@@ -8,4 +8,16 @@
       "program": "fish",
     },
   },
+  {
+    "label": "Hard reset to $ZED_GIT_SHA_SHORT",
+    "command": "git",
+    "args": ["reset", "--hard", "$ZED_GIT_SHA"],
+    "tags": ["git-command"],
+  },
+  {
+    "label": "Soft reset to $ZED_GIT_SHA_SHORT",
+    "command": "git",
+    "args": ["reset", "--soft", "$ZED_GIT_SHA"],
+    "tags": ["git-command"],
+  },
 ]
