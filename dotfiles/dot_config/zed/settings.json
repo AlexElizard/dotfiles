@@ -47,6 +47,9 @@
   ],
   // https://zed.dev/docs/configuring-languages#choosing-language-servers
   "languages": {
+    "Markdown": {
+      "format_on_save": "on",
+    },
     "Python": {
       "language_servers": ["ruff", "ty"],
     },
