@@ -1,0 +1,144 @@
+#:schema https://mise.en.dev/schema/mise-task.json
+
+["minikube:configure"]
+description = "Sets global Minikube defaults for the driver, container runtime, and rootless mode"
+usage = '''
+arg "[driver]" {
+  help "Container driver to persist as the global Minikube default"
+  default "podman"
+  choices "podman" "docker"
+}
+'''
+run = [
+    "minikube config set driver \"{{ usage.driver }}\"",
+    "minikube config set container-runtime containerd",
+    # Let Minikube auto-detect Rootless Docker and enable Rootless Podman only when needed.
+    '''
+    minikube config unset rootless
+    {% if usage.driver == "podman" and (exec(command='podman info --format "{{.Host.Security.Rootless}}"') | trim) == "true" %}
+    minikube config set rootless true
+    {% endif %}
+    ''',
+]
+
+["minikube:start"]
+description = """
+Starts a Minikube profile, creating it if absent.
+Enables ingress and registry and publishes their ports on the host.
+Port mappings are fixed when the profile container is created; use minikube:recreate to change them.
+Profiles running concurrently must use distinct host ports.
+"""
+usage = '''
+flag "-p --profile <profile>" {
+  help "Name of the Minikube profile to start, creating it if absent"
+  default "minikube"
+}
+flag "--listen-address <ip>" {
+  help "Host IP address on which the ingress and registry ports are published"
+  default "127.0.0.1"
+}
+flag "--ingress-http-port <port>" {
+  help "Host port published to the ingress controller's HTTP port 80"
+  default "8080"
+}
+flag "--ingress-https-port <port>" {
+  help "Host port published to the ingress controller's HTTPS port 443"
+  default "8443"
+}
+flag "--registry-port <port>" {
+  help "Host port published to the registry addon's proxy port 5000"
+  default "5000"
+}
+'''
+run = 'minikube start --profile "{{ usage.profile }}" --listen-address="{{ usage.listen_address }}" --ports="{{ usage.ingress_http_port }}:80,{{ usage.ingress_https_port }}:443,{{ usage.registry_port }}:5000" --addons=ingress,registry'
+
+["minikube:stop"]
+description = "Stops one Minikube profile without deleting it"
+usage = '''
+flag "-p --profile <profile>" {
+  help "Name of the Minikube profile to stop"
+  default "minikube"
+}
+'''
+run = 'minikube stop --profile "{{ usage.profile }}"'
+
+["minikube:recreate"]
+description = """
+Deletes and recreates one Minikube profile to apply new creation-time settings.
+The profile's Kubernetes resources and data are deleted.
+"""
+usage = '''
+flag "-p --profile <profile>" {
+  help "Name of the Minikube profile to delete and recreate"
+  default "minikube"
+}
+flag "--listen-address <ip>" {
+  help "Host IP address on which the ingress and registry ports are published"
+  default "127.0.0.1"
+}
+flag "--ingress-http-port <port>" {
+  help "Host port published to the ingress controller's HTTP port 80"
+  default "8080"
+}
+flag "--ingress-https-port <port>" {
+  help "Host port published to the ingress controller's HTTPS port 443"
+  default "8443"
+}
+flag "--registry-port <port>" {
+  help "Host port published to the registry addon's proxy port 5000"
+  default "5000"
+}
+'''
+run = [
+    { task = "minikube:delete", args = ["--profile", "{{ usage.profile }}"] },
+    { task = "minikube:start", args = ["--profile", "{{ usage.profile }}", "--listen-address", "{{ usage.listen_address }}", "--ingress-http-port", "{{ usage.ingress_http_port }}", "--ingress-https-port", "{{ usage.ingress_https_port }}", "--registry-port", "{{ usage.registry_port }}"] },
+]
+
+["minikube:delete"]
+description = "Deletes one Minikube profile"
+usage = '''
+flag "-p --profile <profile>" {
+  help "Name of the Minikube profile to delete"
+  default "minikube"
+}
+'''
+run = 'minikube delete --profile "{{ usage.profile }}"'
+
+["minikube:purge"]
+description = "Deletes all Minikube profiles and removes the entire Minikube home directory"
+run = "minikube delete --all --purge"
+
+["minikube:reset"]
+description = "Deletes all Minikube state, applies global defaults, and creates a fresh profile"
+usage = '''
+arg "[driver]" {
+  help "Container driver to persist as the global Minikube default"
+  default "podman"
+  choices "podman" "docker"
+}
+flag "-p --profile <profile>" {
+  help "Name of the fresh Minikube profile to create"
+  default "minikube"
+}
+flag "--listen-address <ip>" {
+  help "Host IP address on which the ingress and registry ports are published"
+  default "127.0.0.1"
+}
+flag "--ingress-http-port <port>" {
+  help "Host port published to the ingress controller's HTTP port 80"
+  default "8080"
+}
+flag "--ingress-https-port <port>" {
+  help "Host port published to the ingress controller's HTTPS port 443"
+  default "8443"
+}
+flag "--registry-port <port>" {
+  help "Host port published to the registry addon's proxy port 5000"
+  default "5000"
+}
+'''
+run = [
+    { task = "minikube:purge" },
+    { task = "minikube:configure", args = ["{{ usage.driver }}"] },
+    { task = "minikube:start", args = ["--profile", "{{ usage.profile }}", "--listen-address", "{{ usage.listen_address }}", "--ingress-http-port", "{{ usage.ingress_http_port }}", "--ingress-https-port", "{{ usage.ingress_https_port }}", "--registry-port", "{{ usage.registry_port }}"] },
+]
