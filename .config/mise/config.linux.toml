@@ -25,7 +25,7 @@
 fish = "activate"
 
 [bootstrap.hooks.pre-packages]
-run = "dnf copr enable che/nerd-fonts"
+run = "sudo dnf copr enable che/nerd-fonts"
 
 [bootstrap.hooks.post-packages]
 run = """

@@ -11,7 +11,7 @@ Cross-platform — Fedora Workstation and Windows 11.
    - Windows: `winget install jdx.mise && mise plugin install winget https://github.com/Yuzu02/mise-winget`
 2. Clone this repo to `~/.dotfiles`:
    ```shell
-   git clone https://github.com/AlexElizard/dotfiles.git ~/.dotfiles
+   git clone git@github.com:AlexElizard/dotfiles.git ~/.dotfiles
    ```
 3. Bootstrap. The first run sets the OS explicitly, because `miserc.toml` isn't deployed yet:
    ```shell

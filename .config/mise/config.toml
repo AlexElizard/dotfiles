@@ -8,7 +8,7 @@ dotfiles.root = "~/.dotfiles"  # ~ = $HOME on Linux, %USERPROFILE% on Windows
 dotfiles.default_mode = "copy"
 
 [bootstrap.repos]
-"~/.dotfiles" = { url = "https://github.com/AlexElizard/dotfiles.git", ref = "main" }
+"~/.dotfiles" = { url = "git@github.com:AlexElizard/dotfiles.git", ref = "main" }
 
 [dotfiles]
 "~/.config/git"  = { mode = "copy" }
