@@ -1,3 +1,7 @@
+#:schema https://mise.en.dev/schema/mise.json
+
+# Fedora Workstation. Auto-selected on Linux via `auto_env` (miserc.toml).
+
 [bootstrap.packages]
 # Fedora RPM
 "dnf:fish" = "latest"
@@ -42,14 +46,3 @@ EOF
     sudo dconf update
 fi
 """
-
-[tools]
-lazygit = "latest"
-minikube = "latest"
-pnpm = "latest"
-usage = "latest"
-uv = "latest"
-werf = "latest"
-"pipx:copier" = "latest"
-"pipx:go-task-bin" = "latest"
-"pipx:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql" }

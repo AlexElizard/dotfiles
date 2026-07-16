@@ -1,0 +1,9 @@
+#:schema https://mise.en.dev/schema/mise.json
+
+# Windows 11. Auto-selected on Windows via `auto_env` (miserc.toml).
+
+[tools]
+"winget:Microsoft.PowerShell" = "latest"
+
+[bootstrap.mise_shell_activate]
+pwsh = "activate"

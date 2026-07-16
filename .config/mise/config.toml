@@ -1,0 +1,27 @@
+#:schema https://mise.en.dev/schema/mise.json
+
+# Shared config for every machine. OS-specific parts live in config.linux.toml
+# and config.windows.toml, auto-selected per platform by `auto_env` (miserc.toml).
+
+[settings]
+dotfiles.root = "~/.dotfiles"  # ~ = $HOME on Linux, %USERPROFILE% on Windows
+dotfiles.default_mode = "copy"
+
+[bootstrap.repos]
+"~/.dotfiles" = { url = "https://github.com/AlexElizard/dotfiles.git", ref = "main" }
+
+[dotfiles]
+"~/.config/git"  = { mode = "copy" }
+"~/.config/zed"  = { mode = "copy" }
+"~/.config/mise" = { mode = "copy" }
+
+[tools]
+lazygit = "latest"
+minikube = "latest"
+pnpm = "latest"
+usage = "latest"
+uv = "latest"
+werf = { version = "latest", os = ["linux", "macos"] }
+"pipx:copier" = "latest"
+"pipx:go-task-bin" = "latest"
+"pipx:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql" }
