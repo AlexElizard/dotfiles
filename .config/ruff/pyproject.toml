@@ -1,0 +1,92 @@
+[tool.ruff]
+# Honor exclusion rules even for paths passed explicitly to Ruff.
+force-exclude = true
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+# Enable every stable rule. Ruff upgrades pick up new stable rules automatically;
+# preview rules remain disabled until explicitly enabled.
+select = ["ALL"]
+
+ignore = [
+    # Disable rules whose layout requirements conflict with `ruff format`:
+    # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+    "W191",   # tab-indentation
+    "E111",   # indentation-with-invalid-multiple
+    "E114",   # indentation-with-invalid-multiple-comment
+    "E117",   # over-indented
+    "D206",   # docstring-tab-indentation
+    "D300",   # triple-single-quotes
+    "Q000",   # bad-quotes-inline-string
+    "Q001",   # bad-quotes-multiline-string
+    "Q002",   # bad-quotes-docstring
+    "Q003",   # avoidable-escaped-quote
+    "Q004",   # unnecessary-escaped-quote
+    "COM812", # missing-trailing-comma
+    "COM819", # prohibited-trailing-comma
+
+    # Keep annotation-only imports available at runtime. FastAPI, Pydantic,
+    # SQLAlchemy, Dishka, and Taskiq may inspect annotations through transitive
+    # cross-module relationships that Ruff cannot infer safely.
+    "TC001",  # typing-only-first-party-import
+    "TC002",  # typing-only-third-party-import
+    "TC003",  # typing-only-standard-library-import
+]
+
+# Permit Cyrillic confusables used in Russian text (RUF001-RUF003).
+# Mapping source:
+# https://github.com/astral-sh/ruff/blob/main/crates/ruff_linter/src/rules/ruff/rules/confusables.rs
+allowed-confusables = [
+    "А", "В", "Е", "З", "К", "М", "Н", "О", "Р", "С", "Т", "У", "Х", "Ь",
+    "а", "б", "г", "е", "о", "р", "с", "у", "х",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+# Overload declarations share the implementation's documentation.
+ignore-decorators = ["typing.overload", "typing_extensions.overload"]
+property-decorators = ["pydantic.computed_field"]
+
+[tool.ruff.lint.flake8-bandit]
+# Enforce S110 even when `except` names a specific exception type.
+check-typed-exception = true
+
+[tool.ruff.lint.pep8-naming]
+# Prevent N805 false positives for framework-defined class methods.
+classmethod-decorators = [
+    "pydantic.field_validator",
+    "sqlalchemy.orm.declared_attr",
+]
+
+[tool.ruff.lint.isort]
+# Keep Alembic imports in the third-party section inside migration packages.
+known-third-party = ["alembic"]
+
+[tool.ruff.lint.per-file-ignores]
+# Package initializers may omit docstrings and expose intentional re-exports.
+"__init__.py" = [
+    "D104", # undocumented-public-package
+    "F401", # unused-import
+]
+# Alembic migrations may preserve generated docstrings and imports.
+"{alembic,migrations}/versions/*.py" = [
+    "D415", # missing-terminal-punctuation
+    "F401", # unused-import
+]
+# Tests favor concise fixtures and white-box assertions over production constraints.
+"{test_*,conftest}.py" = [
+    "D",       # pydocstyle
+    "ANN",     # flake8-annotations
+    "ARG",     # flake8-unused-arguments
+    "FBT",     # flake8-boolean-trap
+    "S101",    # assert
+    "S311",    # suspicious-non-cryptographic-random-usage
+    "PLR2004", # magic-value-comparison
+    "SLF001",  # private-member-access
+]
+
+[tool.ruff.lint.flake8-import-conventions.extend-aliases]
+"dash_bootstrap_components" = "dbc"
+"sqlalchemy" = "sa"
