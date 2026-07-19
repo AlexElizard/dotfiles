@@ -1,6 +1,8 @@
 [tool.ruff]
 # Honor exclusion rules even for paths passed explicitly to Ruff.
 force-exclude = true
+required-version = ">=0.5.22"
+target-version = "py313"
 
 [tool.ruff.format]
 docstring-code-format = true
