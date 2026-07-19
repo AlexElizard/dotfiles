@@ -11,7 +11,9 @@ docstring-code-format = true
 # Enable every stable rule. Ruff upgrades pick up new stable rules automatically;
 # preview rules remain disabled until explicitly enabled.
 select = ["ALL"]
-
+external = [
+    "WPS", # wemake-python-styleguide
+]
 ignore = [
     # Disable rules whose layout requirements conflict with `ruff format`:
     # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
