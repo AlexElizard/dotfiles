@@ -36,6 +36,17 @@
     "sql": true,
     "toml": true,
   },
+  "context_servers": {
+    "mise": {
+      "enabled": true,
+      "remote": false,
+      "command": "mise",
+      "args": ["mcp"],
+      "env": {
+        "MISE_EXPERIMENTAL": "1",
+      },
+    },
+  },
   "format_on_save": "on",
   "git_panel": {
     "tree_view": true,
