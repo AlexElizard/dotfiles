@@ -1,9 +1,14 @@
 #:schema https://mise.en.dev/schema/mise.json
 
 # Windows 11. Auto-selected on Windows via `auto_env` (miserc.toml).
+[bootstrap.mise_shell_activate]
+bash_profile = "shims"
+bashrc = "activate"
+pwsh = "activate"
+
+[plugins]
+winget = "https://github.com/Yuzu02/mise-winget"
 
 [tools]
+"winget:Git.Git" = "latest"
 "winget:Microsoft.PowerShell" = "latest"
-
-[bootstrap.mise_shell_activate]
-pwsh = "activate"

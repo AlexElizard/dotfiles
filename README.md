@@ -8,7 +8,7 @@ Cross-platform — Fedora Workstation and Windows 11.
 
 1. Install mise ([docs](https://mise.jdx.dev/installing-mise.html)):
    - Fedora: `dnf copr enable jdxcode/mise && sudo dnf install mise`
-   - Windows: `winget install jdx.mise && mise plugin install winget https://github.com/Yuzu02/mise-winget`
+   - Windows: `winget install jdx.mise`
 2. Clone this repo to `~/.dotfiles`:
    ```shell
    git clone git@github.com:AlexElizard/dotfiles.git ~/.dotfiles
@@ -32,4 +32,4 @@ mise bootstrap
 | `.config/mise/config.linux.toml`   | Fedora packages, hooks, shell activation                    |
 | `.config/mise/config.windows.toml` | Windows tools (winget) and shell activation                 |
 | `.config/mise/miserc.toml`         | `auto_env = true` — selects `config.<os>.toml` per platform |
-| `.config/{git,zed}`                | Application configs, deployed as copies                     |
+| `.config/{git,ruff,zed}`           | Application configs, deployed as copies                     |
