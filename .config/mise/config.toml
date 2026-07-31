@@ -11,17 +11,15 @@ dotfiles.default_mode = "copy"
 "~/.dotfiles" = { url = "git@github.com:AlexElizard/dotfiles.git", ref = "main" }
 
 [dotfiles]
-"~/.config/git"  = { mode = "copy" }
-"~/.config/zed"  = { mode = "copy" }
-"~/.config/mise" = { mode = "copy" }
+"~/.config"  = {}
 
 [tools]
 lazygit = "latest"
 minikube = "latest"
 pnpm = "latest"
+task = "latest"
 usage = "latest"
 uv = "latest"
 werf = { version = "latest", os = ["linux", "macos"] }
 "pipx:copier" = "latest"
-"pipx:go-task-bin" = "latest"
 "pipx:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql" }
