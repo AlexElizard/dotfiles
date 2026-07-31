@@ -6,9 +6,9 @@ bash_profile = "shims"
 bashrc = "activate"
 pwsh = "activate"
 
-[plugins]
+[bootstrap.plugins]
 winget = "https://github.com/Yuzu02/mise-winget"
 
-[tools]
+[bootstrap.packages]
 "winget:Git.Git" = "latest"
 "winget:Microsoft.PowerShell" = "latest"
