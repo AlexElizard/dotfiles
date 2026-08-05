@@ -3,6 +3,11 @@
 ## [Compose]
 compose.override.yaml
 
+## [Mise]
+mise-oci/
+mise.local.toml
+mise.*.local.toml
+
 ## [JavaScript]
 node_modules/
 
