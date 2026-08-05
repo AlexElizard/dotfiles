@@ -1,27 +1,41 @@
-# https://github.com/github/gitignore
+## https://github.com/github/gitignore
 
-# [Compose] ############################################################################
+## [Compose] ###########################################################################
 compose.override.yaml
 
-# [Mise] ###############################################################################
+## [Mise] ##############################################################################
+## https://mise.jdx.dev/dev-tools/mise-oci.html#mise-oci-build
 mise-oci/
+
+## https://mise.jdx.dev/configuration.html#mise-toml
+.mise/config.local.toml
+.mise/config.*.local.toml
+mise/config.local.toml
+mise/config.*.local.toml
 mise.local.toml
 mise.*.local.toml
 
-# [JavaScript] #########################################################################
+# https://mise.jdx.dev/dev-tools/mise-lock.html#environment-specific-lockfiles
+mise.local.lock
+mise.*.local.lock
+
+## [JavaScript] ########################################################################
 node_modules/
 
-# [Task] ###############################################################################
+## [Task] ##############################################################################
+## https://taskfile.dev/docs/guide#by-fingerprinting-locally-generated-files-and-their-sources
 .task/
+
+## https://taskfile.dev/docs/guide#supported-file-names
 Taskfile.yml
 taskfile.yml
 Taskfile.yaml
 taskfile.yaml
 
-# [Python] #############################################################################
+## [Python] ############################################################################
 __pycache__/
 .ipynb_checkpoints/
 .venv/
 
-# [Werf] ###############################################################################
+## [Werf] ###############################################################################
 .werf_secret_key
