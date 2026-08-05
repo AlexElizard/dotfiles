@@ -1,17 +1,10 @@
-#:schema https://mise.en.dev/schema/mise.json
-
-# Shared config for every machine. OS-specific parts live in config.linux.toml
-# and config.windows.toml, auto-selected per platform by `auto_env` (miserc.toml).
+## [Configuration] #####################################################################
 
 [settings]
 dotfiles.root = "~/.dotfiles"  # ~ = $HOME on Linux, %USERPROFILE% on Windows
 dotfiles.default_mode = "copy"
 
-[bootstrap.repos]
-"~/.dotfiles" = { url = "git@github.com:AlexElizard/dotfiles.git", ref = "main" }
-
-[dotfiles]
-"~/.config"  = {}
+## [DevTools] ##########################################################################
 
 [tools]
 lazygit = "latest"
@@ -20,6 +13,64 @@ pnpm = "latest"
 task = "latest"
 usage = "latest"
 uv = "latest"
-werf = { version = "latest", os = ["linux", "macos"] }
+werf = "latest"
 "pipx:copier" = "latest"
 "pipx:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql" }
+
+## [Bootstrap] #########################################################################
+
+[bootstrap.packages]
+## Fedora RPM
+"dnf:fish" = "latest"
+"dnf:fuse-libs" = "latest"
+"dnf:git-credential-libsecret" = "latest"
+"dnf:google-chrome-stable" = "latest"
+"dnf:nerd-fonts" = "latest"
+"dnf:nextcloud-client" = "latest"
+"dnf:remmina" = "latest"
+"dnf:steam" = "latest"
+## Flathub
+"flatpak:be.alexandervanhee.gradia" = "latest"
+"flatpak:com.mattermost.Desktop" = "latest"
+"flatpak:com.mattjakeman.ExtensionManager" = "latest"
+"flatpak:io.podman_desktop.PodmanDesktop" = "latest"
+"flatpak:it.mijorus.gearlever" = "latest"
+"flatpak:md.obsidian.Obsidian" = "latest"
+"flatpak:org.telegram.desktop" = "latest"
+
+[bootstrap.repos]
+"~/.dotfiles" = { url = "git@github.com:AlexElizard/dotfiles.git", ref = "main" }
+
+[dotfiles]
+"~/.config"  = {}
+
+[bootstrap.mise_shell_activate]
+bashrc = "activate"
+fish = "activate"
+
+[bootstrap.hooks.pre-packages]
+run = """
+if [ ! -f "/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:che:nerd-fonts.repo" ]; then
+    sudo dnf copr enable che/nerd-fonts
+fi
+"""
+
+[bootstrap.hooks.post-packages]
+run = """
+if ! hash zed 2> /dev/null; then
+    echo "Install zed editor"
+    curl -f https://zed.dev/install.sh | sh
+fi
+
+# Disable auto suspend on login screen
+# https://discussion.fedoraproject.org/t/gnome-suspends-after-15-minutes-of-user-inactivity-even-on-ac-power/79801
+if [ ! -f "/etc/dconf/db/gdm.d/01-customize-suspend" ]; then
+    sudo tee /etc/dconf/db/gdm.d/01-customize-suspend > /dev/null <<EOF
+[org/gnome/settings-daemon/plugins/power]
+sleep-inactive-ac-timeout=0
+sleep-inactive-battery-timeout=0
+EOF
+
+    sudo dconf update
+fi
+"""

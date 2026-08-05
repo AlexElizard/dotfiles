@@ -1,5 +1,2 @@
-# Loaded before the main config. `auto_env` activates the current OS name
-# (linux / windows / macos) as an environment, so the matching config.<os>.toml
-# is selected automatically per platform — no `-E` flag needed.
-# https://mise.en.dev/configuration/environments.html
+## https://mise.en.dev/configuration/environments.html#platform-environments
 auto_env = true

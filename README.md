@@ -1,21 +1,23 @@
 # AlexElizard's dotfiles
 
 Managed with [mise](https://mise.jdx.dev): [bootstrap](https://mise.jdx.dev/bootstrap.html)
-installs packages/tools and [dotfiles](https://mise.jdx.dev/dotfiles.html) deploys configs.
-Cross-platform — Fedora Workstation and Windows 11.
+installs packages and development tools, while [dotfiles](https://mise.jdx.dev/dotfiles.html)
+deploys application configs. These dotfiles target Fedora Workstation.
 
 ## Install
 
-1. Install mise ([docs](https://mise.jdx.dev/installing-mise.html)):
-   - Fedora: `dnf copr enable jdxcode/mise && sudo dnf install mise`
-   - Windows: `winget install jdx.mise`
+1. Install mise with the [official installer](https://mise.jdx.dev/installing-mise.html):
+   ```shell
+   curl https://mise.run | sh
+   ```
 2. Clone this repo to `~/.dotfiles`:
    ```shell
    git clone git@github.com:AlexElizard/dotfiles.git ~/.dotfiles
    ```
-3. Bootstrap. The first run sets the OS explicitly, because `miserc.toml` isn't deployed yet:
+3. Bootstrap using the repository config. The absolute path to `mise` makes the command
+   work before shell activation is deployed:
    ```shell
-   MISE_AUTO_ENV=1 MISE_CONFIG_FILE="$HOME/.dotfiles/.config/mise/config.toml" mise bootstrap
+   MISE_CONFIG_FILE="$HOME/.dotfiles/.config/mise/config.toml" ~/.local/bin/mise bootstrap
    ```
 
 ## Update
@@ -26,10 +28,9 @@ mise bootstrap
 
 ## Layout
 
-| File                               | Purpose                                                     |
-| ---------------------------------- | ----------------------------------------------------------- |
-| `.config/mise/config.toml`         | Shared settings, repos, dotfiles, cross-platform tools      |
-| `.config/mise/config.linux.toml`   | Fedora packages, hooks, shell activation                    |
-| `.config/mise/config.windows.toml` | Windows tools (winget) and shell activation                 |
-| `.config/mise/miserc.toml`         | `auto_env = true` — selects `config.<os>.toml` per platform |
-| `.config/{git,ruff,zed}`           | Application configs, deployed as copies                     |
+| File                       | Purpose                                                   |
+| -------------------------- | --------------------------------------------------------- |
+| `.config/mise/config.toml` | Fedora packages, development tools, hooks, and dotfiles   |
+| `.config/mise/miserc.toml` | Global mise settings, deployed with the rest of `.config` |
+| `.config/mise/tasks`       | Custom mise tasks                                         |
+| `.config/{git,ruff,zed}`   | Application configs, deployed as copies                   |
