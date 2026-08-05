@@ -8,24 +8,15 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent": {
-    "default_profile": "ask",
     "default_model": {
-      "effort": "xhigh",
+      "effort": "max",
       "provider": "openai-subscribed",
       "model": "gpt-5.6-sol",
       "enable_thinking": true,
     },
-    "favorite_models": [],
-    "model_parameters": [],
-  },
-  "agent_servers": {
-    "claude-acp": {
-      "default_config_options": {
-        "effort": "max",
-        "mode": "plan",
-        "model": "opus",
-      },
-      "type": "registry",
+    "compaction_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-5.6-terra",
     },
   },
   "auto_install_extensions": {
