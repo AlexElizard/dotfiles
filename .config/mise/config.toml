@@ -1,15 +1,14 @@
 ## [Configuration] #####################################################################
-
 [settings]
 dotfiles.root = "~/.dotfiles"  # ~ = $HOME on Linux, %USERPROFILE% on Windows
 dotfiles.default_mode = "copy"
 
 ## [DevTools] ##########################################################################
-
 [tools]
 lazygit = "latest"
 minikube = "latest"
 pnpm = "latest"
+ripgrep = "latest"
 task = "latest"
 usage = "latest"
 uv = "latest"
@@ -18,7 +17,6 @@ werf = "latest"
 "pipx:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql" }
 
 ## [Bootstrap] #########################################################################
-
 [bootstrap.packages]
 ## Fedora RPM
 "dnf:fish" = "latest"
