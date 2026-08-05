@@ -1,24 +1,27 @@
-## https://github.com/github/gitignore
+# https://github.com/github/gitignore
 
-## [Compose]
+# [Compose] ############################################################################
 compose.override.yaml
 
-## [Mise]
+# [Mise] ###############################################################################
 mise-oci/
 mise.local.toml
 mise.*.local.toml
 
-## [JavaScript]
+# [JavaScript] #########################################################################
 node_modules/
 
-## [Task]
+# [Task] ###############################################################################
 .task/
 Taskfile.yml
 taskfile.yml
 Taskfile.yaml
 taskfile.yaml
 
-## [Python]
+# [Python] #############################################################################
 __pycache__/
 .ipynb_checkpoints/
 .venv/
+
+# [Werf] ###############################################################################
+.werf_secret_key
