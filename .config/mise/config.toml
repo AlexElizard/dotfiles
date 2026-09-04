@@ -6,6 +6,7 @@ dotfiles.default_mode = "copy"
 ## [DevTools] ##########################################################################
 [tools]
 cliamp = "latest"
+herdr = "latest"
 lazygit = "latest"
 minikube = "latest"
 pnpm = "latest"
