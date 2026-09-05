@@ -18,6 +18,7 @@ task = "latest"
 usage = "latest"
 uv = "latest"
 werf = "latest"
+yazi = "latest"
 zellij = "latest"
 "pipx:copier" = "latest"
 "pipx:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql" }
