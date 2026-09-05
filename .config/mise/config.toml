@@ -5,6 +5,7 @@ dotfiles.default_mode = "copy"
 
 ## [DevTools] ##########################################################################
 [tools]
+btop = "latest"
 cliamp = "latest"
 fd = "latest"
 fzf = "latest"
