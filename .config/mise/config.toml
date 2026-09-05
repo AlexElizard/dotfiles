@@ -7,6 +7,7 @@ dotfiles.default_mode = "copy"
 [tools]
 cliamp = "latest"
 fd = "latest"
+fzf = "latest"
 herdr = "latest"
 lazygit = "latest"
 minikube = "latest"
