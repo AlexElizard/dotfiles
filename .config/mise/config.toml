@@ -7,6 +7,7 @@ dotfiles.default_mode = "copy"
 [tools]
 btop = "latest"
 cliamp = "latest"
+fastfetch = "latest"
 fd = "latest"
 fzf = "latest"
 herdr = "latest"
