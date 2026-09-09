@@ -25,6 +25,7 @@
     "html": true,
     "lua": true,
     "sql": true,
+    "tombi": true,
     "toml": true,
   },
   "context_servers": {
