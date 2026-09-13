@@ -1,2 +1,7 @@
 ## https://mise.en.dev/configuration/environments.html#platform-environments
+## NOTE: It will be set true by default after 2027.6.0
 auto_env = true
+
+## https://mise.jdx.dev/configuration/environments.html#conf-d-environments
+## NOTE: It will be set true by default after 2027.8.10
+env_conf_d = true

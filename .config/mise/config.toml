@@ -1,3 +1,5 @@
+min_version = "2026.9.6"
+
 ## [Configuration] #####################################################################
 [settings]
 dotfiles.root = "~/.dotfiles"  # ~ = $HOME on Linux, %USERPROFILE% on Windows
@@ -46,12 +48,6 @@ zellij = "latest"
 "flatpak:md.obsidian.Obsidian" = "latest"
 "flatpak:org.telegram.desktop" = "latest"
 
-[bootstrap.repos]
-"~/.dotfiles" = { url = "git@github.com:AlexElizard/dotfiles.git", ref = "main" }
-
-[dotfiles]
-"~/.config"  = {}
-
 [bootstrap.mise_shell_activate]
 bashrc = "activate"
 fish = "activate"
@@ -82,3 +78,10 @@ EOF
     sudo dconf update
 fi
 """
+
+[dotfiles]
+"~/.config/fastfetch" = { mode = "copy" }
+"~/.config/git" = { mode = "copy" }
+"~/.config/mise" = { mode = "copy" }
+"~/.config/ruff" = { mode = "copy" }
+"~/.config/zed" = { mode = "copy" }
