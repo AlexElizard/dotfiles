@@ -8,7 +8,7 @@ deploys application configs. These dotfiles target Fedora Workstation.
 
 1. Install mise with the [official installer](https://mise.jdx.dev/installing-mise.html):
    ```shell
-   curl https://mise.run | sh
+   curl -fsSL https://mise.run | sh
    ```
 2. Clone this repo to `~/.dotfiles`:
    ```shell
@@ -17,7 +17,7 @@ deploys application configs. These dotfiles target Fedora Workstation.
 3. Bootstrap using the repository config. The absolute path to `mise` makes the command
    work before shell activation is deployed:
    ```shell
-   MISE_CONFIG_FILE="$HOME/.dotfiles/.config/mise/config.toml" ~/.local/bin/mise bootstrap
+   ~/.local/bin/mise bootstrap
    ```
 
 ## Update
