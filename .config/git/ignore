@@ -37,5 +37,13 @@ __pycache__/
 .ipynb_checkpoints/
 .venv/
 
-## [Werf] ###############################################################################
+## [Visual Studio Code] ################################################################
+.vscode/
+!.vscode/*.code-snippets
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+## [Werf] ##############################################################################
 .werf_secret_key
