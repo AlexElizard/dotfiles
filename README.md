@@ -17,13 +17,13 @@ deploys application configs. These dotfiles target Fedora Workstation.
 3. Bootstrap using the repository config. The absolute path to `mise` makes the command
    work before shell activation is deployed:
    ```shell
-   ~/.local/bin/mise bootstrap
+   MISE_CONFIG_FILE="$HOME/.dotfiles/.config/mise/config.toml" ~/.local/bin/mise bootstrap
    ```
 
 ## Update
 
 ```shell
-mise bootstrap
+MISE_CONFIG_FILE="$HOME/.dotfiles/.config/mise/config.toml" ~/.local/bin/mise bootstrap
 ```
 
 ## Layout

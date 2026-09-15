@@ -1,4 +1,4 @@
-min_version = "2026.9.6"
+min_version = "2026.9.9"
 
 ## [Configuration] #####################################################################
 [settings]
@@ -25,8 +25,8 @@ uv = "latest"
 werf = "latest"
 yazi = "latest"
 zellij = "latest"
-"pipx:copier" = "latest"
-"pipx:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql" }
+"pypi:copier" = "latest"
+"pypi:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql" }
 
 ## [Bootstrap] #########################################################################
 [bootstrap.packages]
