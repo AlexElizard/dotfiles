@@ -47,6 +47,7 @@ zellij = "latest"
 "flatpak:io.podman_desktop.PodmanDesktop" = "latest"
 "flatpak:it.mijorus.gearlever" = "latest"
 "flatpak:md.obsidian.Obsidian" = "latest"
+"flatpak:org.onlyoffice.desktopeditors" = "latest"
 "flatpak:org.telegram.desktop" = "latest"
 
 [bootstrap.mise_shell_activate]
