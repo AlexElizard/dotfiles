@@ -1,7 +1,7 @@
 [tool.ruff]
 # Honor exclusion rules even for paths passed explicitly to Ruff.
 force-exclude = true
-required-version = ">=0.16.7"
+required-version = ">=0.16.10"
 target-version = "py313"
 
 [tool.ruff.format]
@@ -37,21 +37,26 @@ ignore = [
   "TC001",  # typing-only-first-party-import
   "TC002",  # typing-only-third-party-import
   "TC003",  # typing-only-standard-library-import
+
+  # Specific rules
+  "CPY001",  # missing-copyright-notice
 ]
 
 # Permit Cyrillic confusables used in Russian text (RUF001-RUF003).
 # Mapping source:
 # https://github.com/astral-sh/ruff/blob/main/crates/ruff_linter/src/rules/ruff/rules/confusables.rs
-allowed-confusables = [
-    "А", "В", "Е", "З", "К", "М", "Н", "О", "Р", "С", "Т", "У", "Х", "Ь",
-    "а", "б", "г", "е", "о", "р", "с", "у", "х",
-]
+allowed-confusables = ["а", "б", "г", "е", "о", "р", "с", "у", "х", "А", "В", "Е", "З", "К", "М", "Н", "О", "Р", "С", "Т", "У", "Х", "Ь"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 # Overload declarations share the implementation's documentation.
-ignore-decorators = ["typing.overload", "typing_extensions.overload"]
-property-decorators = ["pydantic.computed_field"]
+ignore-decorators = [
+  "typing.overload",
+  "typing_extensions.overload",
+]
+property-decorators = [
+  "pydantic.computed_field",
+]
 
 [tool.ruff.lint.flake8-bandit]
 # Enforce S110 even when `except` names a specific exception type.
@@ -82,9 +87,6 @@ known-third-party = ["alembic"]
 # Tests favor concise fixtures and white-box assertions over production constraints.
 "{test_*,conftest}.py" = [
   "D",  # pydocstyle
-  "ANN",  # flake8-annotations
-  "ARG",  # flake8-unused-arguments
-  "FBT",  # flake8-boolean-trap
   "S101",  # assert
   "S311",  # suspicious-non-cryptographic-random-usage
   "PLR2004",  # magic-value-comparison
