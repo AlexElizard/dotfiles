@@ -9,14 +9,14 @@
 {
   "agent": {
     "default_model": {
-      "effort": "max",
+      "effort": "high",
       "provider": "openai-subscribed",
-      "model": "gpt-5.6-sol",
+      "model": "gpt-6.1-sol",
       "enable_thinking": true,
     },
     "compaction_model": {
       "provider": "openai-subscribed",
-      "model": "gpt-5.6-terra",
+      "model": "gpt-6-astra",
     },
   },
   "auto_install_extensions": {
