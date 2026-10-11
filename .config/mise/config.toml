@@ -1,4 +1,4 @@
-min_version = "2026.10.1"
+min_version = "2026.10.7"
 
 ## [Configuration] #####################################################################
 [settings]
@@ -44,6 +44,7 @@ zellij = "latest"
 "flatpak:be.alexandervanhee.gradia" = "latest"
 "flatpak:com.mattermost.Desktop" = "latest"
 "flatpak:com.mattjakeman.ExtensionManager" = "latest"
+"flatpak:com.vysp3r.ProtonPlus" = "latest"
 "flatpak:io.podman_desktop.PodmanDesktop" = "latest"
 "flatpak:it.mijorus.gearlever" = "latest"
 "flatpak:md.obsidian.Obsidian" = "latest"
