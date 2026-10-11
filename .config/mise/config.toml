@@ -7,6 +7,7 @@ dotfiles.default_mode = "copy"
 
 ## [DevTools] ##########################################################################
 [tools]
+aube = "latest"
 btop = "latest"
 cliamp = "latest"
 fastfetch = "latest"
@@ -15,7 +16,6 @@ fzf = "latest"
 herdr = "latest"
 lazygit = "latest"
 minikube = "latest"
-pnpm = "latest"
 ripgrep = "latest"
 ruff = "latest"
 skim = "latest"
