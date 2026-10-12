@@ -6,7 +6,54 @@
     },
   },
   "modules": [
-    // --- Device: статичные характеристики железа ---
+    // --- System: OS and current system state ---
+    {
+      "type": "os",
+      "key": "{icon} OS",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "kernel",
+      "key": "│ ├{icon} Kernel",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "packages",
+      "key": "│ ├{icon} Packages",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "command",
+      "key": "│ ├󰏖 mise-en-place",
+      "keyColor": "yellow",
+      // Count unique installed/current tools and missing versions selected by the current config.
+      "text": "if command -v mise >/dev/null 2>&1 && command -v jq >/dev/null 2>&1; then tools=$(mise ls --json 2>/dev/null) && printf '%s\\n' \"$tools\" | jq -er '{installed: ([.[] | select(any(.[]; .installed == true))] | length), current: ([.[] | select(any(.[]; .active == true))] | length), missing: ([.[][] | select(.active == true and .installed != true)] | length)} | \"\\(.installed) tools (installed), \\(.current) tools (current), \\(.missing) versions (missing)\"' 2>/dev/null || printf 'unknown\\n'; else printf 'unavailable (mise/jq)\\n'; fi",
+    },
+    {
+      "type": "locale",
+      "key": "│ ├󰗊 Locale",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "localip",
+      "key": "│ ├{icon} Local IP",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "uptime",
+      "key": "│ ├{icon} Uptime",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "command",
+      "key": "│ └󱦟 Filesystem Age",
+      "keyColor": "yellow",
+      // Root filesystem age, not necessarily time since OS installation.
+      "text": "birth=$(stat -c %W / 2>/dev/null); case \"$birth\" in ''|0|*[!0-9]*) printf 'unknown\\n' ;; *) now=$(date +%s); if [ \"$birth\" -gt \"$now\" ]; then printf 'unknown\\n'; else printf '%s days\\n' \"$(( (now - birth) / 86400 ))\"; fi ;; esac",
+    },
+    "break",
+
+    // --- Device: hardware and available audio devices ---
     {
       "type": "host",
       "key": "{icon} Device",
@@ -23,32 +70,66 @@
       "keyColor": "red",
     },
     {
-      "type": "sound",
-      "key": "│ ├{icon} Sound",
-      "keyColor": "red",
-    },
-    {
       "type": "display",
       "key": "│ ├{icon} Display",
       "keyColor": "red",
     },
     {
-      "type": "bluetooth",
-      "key": "│ └{icon} Bluetooth",
+      "type": "sound",
+      "key": "│ └{icon} Sound",
       "keyColor": "red",
     },
+    "break",
 
-    // --- Resources: текущая нагрузка, с полосой загрузки ---
+    // --- Peripherals: input devices and connected Bluetooth devices ---
+    {
+      "type": "custom",
+      "key": "󰟀 Peripherals",
+      "keyColor": "magenta",
+    },
+    {
+      "type": "keyboard",
+      "key": "│ ├{icon} Keyboard",
+      "keyColor": "magenta",
+      // Omit device serial numbers from shared screenshots.
+      "format": "{name}",
+    },
+    {
+      "type": "mouse",
+      "key": "│ ├{icon} Mouse",
+      "keyColor": "magenta",
+      "format": "{name}",
+    },
+    {
+      "type": "bluetooth",
+      "key": "│ └{icon} Bluetooth",
+      "keyColor": "magenta",
+      "percent": {
+        "type": ["num", "num-color"],
+        "green": 80,
+        "yellow": 20,
+      },
+    },
+    "break",
+
+    // --- Resources: system load and resource usage ---
     {
       "type": "custom",
       "key": "󰊚 Resources",
       "keyColor": "cyan",
     },
     {
+      "type": "loadavg",
+      "key": "│ ├{icon} Load average",
+      "keyColor": "cyan",
+      // Load averages over 1 / 5 / 15 minutes, not CPU usage percentages.
+      "format": "{loadavg1} / {loadavg2} / {loadavg3}",
+    },
+    {
       "type": "battery",
       "key": "│ ├{icon} Battery",
       "keyColor": "cyan",
-      // green > yellow -> шкала работает в обратную сторону: полный заряд зелёный, низкий красный
+      // green > yellow reverses the thresholds: high charge is green, low charge is red.
       "percent": {
         "type": ["bar", "bar-monochrome", "num", "num-color"],
         "green": 80,
@@ -85,43 +166,57 @@
         "yellow": 80,
       },
     },
-    {
-      "type": "os",
-      "key": "{icon} OS",
-      "keyColor": "yellow",
-    },
-    {
-      "type": "kernel",
-      "key": "│ ├{icon} Kernel",
-      "keyColor": "yellow",
-    },
-    {
-      "type": "packages",
-      "key": "│ ├{icon} Packages",
-      "keyColor": "yellow",
-    },
-    {
-      "type": "locale",
-      "key": "│ ├󰗊 Locale",
-      "keyColor": "yellow",
-    },
-    {
-      "type": "uptime",
-      "key": "│ ├{icon} Uptime",
-      "keyColor": "yellow",
-    },
-    {
-      "type": "localip",
-      "key": "│ ├{icon} Local IP",
-      "keyColor": "yellow",
-    },
-    {
-      "type": "command",
-      "key": "│ └󱦟 Age",
-      "keyColor": "yellow",
-      "text": "b=$(stat -c %W / 2>/dev/null); if [ -z $b ] || [ $b = 0 ]; then echo unknown; else echo $(( ($(date +%s) - b) / 86400 )) days; fi",
-    },
+    "break",
 
+    // --- Desktop: LM, DE, and WM are independent; a DE may be absent ---
+    {
+      "type": "custom",
+      "key": "󰇄 Desktop",
+      "keyColor": "green",
+    },
+    {
+      "type": "de",
+      "key": "│ ├{icon} DE",
+      "keyColor": "green",
+    },
+    {
+      "type": "wm",
+      "key": "│ ├󰕮 Window Manager",
+      "keyColor": "green",
+    },
+    {
+      "type": "lm",
+      "key": "│ ├󰍁 Login Manager",
+      "keyColor": "green",
+    },
+    {
+      "type": "wmtheme",
+      "key": "│ ├{icon} WM Theme",
+      "keyColor": "green",
+    },
+    {
+      "type": "theme",
+      "key": "│ ├{icon} Theme",
+      "keyColor": "green",
+    },
+    {
+      "type": "icons",
+      "key": "│ ├{icon} Icons",
+      "keyColor": "green",
+    },
+    {
+      "type": "font",
+      "key": "│ ├{icon} Font",
+      "keyColor": "green",
+    },
+    {
+      "type": "cursor",
+      "key": "│ └{icon} Cursor",
+      "keyColor": "green",
+    },
+    "break",
+
+    // --- Terminal: tools used in the current session ---
     {
       "type": "terminal",
       "key": "{icon} Terminal",
@@ -141,47 +236,6 @@
       "type": "terminalfont",
       "key": "│ └{icon} Font",
       "keyColor": "blue",
-    },
-
-    {
-      "type": "de",
-      "key": "{icon} DE",
-      "keyColor": "green",
-    },
-    {
-      "type": "lm",
-      "key": "│ ├󰍁 Login Manager",
-      "keyColor": "green",
-    },
-    {
-      "type": "wm",
-      "key": "│ ├󰕮 Window Manager",
-      "keyColor": "green",
-    },
-    {
-      "type": "wmtheme",
-      "key": "│ ├{icon} WM Theme",
-      "keyColor": "magenta",
-    },
-    {
-      "type": "theme",
-      "key": "│ ├{icon} Theme",
-      "keyColor": "magenta",
-    },
-    {
-      "type": "icons",
-      "key": "│ ├{icon} Icons",
-      "keyColor": "magenta",
-    },
-    {
-      "type": "font",
-      "key": "│ ├{icon} Font",
-      "keyColor": "magenta",
-    },
-    {
-      "type": "cursor",
-      "key": "│ └{icon} Cursor",
-      "keyColor": "magenta",
     },
     "break",
     "colors",
