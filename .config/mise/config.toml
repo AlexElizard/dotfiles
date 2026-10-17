@@ -48,6 +48,7 @@ nerd-fonts = { copr = "che/nerd-fonts" }
 "dnf:remmina" = "latest"
 "dnf:steam" = "latest"
 ## Flathub
+"flatpak:app.zen_browser.zen" = "latest"
 "flatpak:be.alexandervanhee.gradia" = "latest"
 "flatpak:com.mattermost.Desktop" = "latest"
 "flatpak:com.mattjakeman.ExtensionManager" = "latest"
