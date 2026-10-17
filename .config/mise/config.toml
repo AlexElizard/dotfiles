@@ -32,6 +32,9 @@ zellij = "latest"
 "pypi:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql" }
 
 ## [Bootstrap] #########################################################################
+[bootstrap.dnf.repos]
+nerd-fonts = { copr = "che/nerd-fonts" }
+
 [bootstrap.packages]
 ## Fedora RPM
 "dnf:fish" = "latest"
@@ -56,13 +59,6 @@ zellij = "latest"
 [bootstrap.mise_shell_activate]
 bashrc = "activate"
 fish = "activate"
-
-[bootstrap.hooks.pre-packages]
-run = """
-if [ ! -f "/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:che:nerd-fonts.repo" ]; then
-    sudo dnf copr enable che/nerd-fonts
-fi
-"""
 
 [bootstrap.hooks.post-packages]
 run = """
