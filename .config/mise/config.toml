@@ -33,12 +33,14 @@ zellij = "latest"
 
 ## [Bootstrap] #########################################################################
 [bootstrap.dnf.repos]
+ghostty = { copr = "scottames/ghostty" }
 nerd-fonts = { copr = "che/nerd-fonts" }
 
 [bootstrap.packages]
 ## Fedora RPM
 "dnf:fish" = "latest"
 "dnf:fuse-libs" = "latest"
+"dnf:ghostty" = "latest"
 "dnf:git-credential-libsecret" = "latest"
 "dnf:google-chrome-stable" = "latest"
 "dnf:nerd-fonts" = "latest"
