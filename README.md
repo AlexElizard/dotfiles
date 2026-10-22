@@ -28,9 +28,13 @@ MISE_CONFIG_FILE="$HOME/.dotfiles/.config/mise/config.toml" ~/.local/bin/mise bo
 
 ## Layout
 
-| File                       | Purpose                                                   |
-| -------------------------- | --------------------------------------------------------- |
-| `.config/mise/config.toml` | Fedora packages, development tools, hooks, and dotfiles   |
-| `.config/mise/miserc.toml` | Global mise settings, deployed with the rest of `.config` |
-| `.config/mise/tasks`       | Custom mise tasks                                         |
-| `.config/{git,ruff,zed}`   | Application configs, deployed as copies                   |
+| File                             | Purpose                                                   |
+| -------------------------------- | --------------------------------------------------------- |
+| `.config/mise/config.toml`       | Fedora packages, development tools, hooks, and dotfiles   |
+| `.config/mise/miserc.toml`       | Global mise settings, deployed with the rest of `.config` |
+| `.config/mise/tasks`             | Custom mise tasks                                         |
+| `.config/{ghostty,git,ruff,zed}` | Application configs, deployed as copies                   |
+
+Ghostty starts Fish via `command = /usr/bin/fish`, independently of the account's
+login shell. Bash can remain the login shell; no `chsh` or automatic Fish launch
+from `.bashrc` is needed.
