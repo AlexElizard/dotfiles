@@ -1,4 +1,4 @@
-min_version = "2026.10.11"
+min_version = "2026.10.17"
 
 ## [Configuration] #####################################################################
 [settings]
@@ -25,7 +25,7 @@ superfile = "latest"
 task = "latest"
 usage = "latest"
 uv = "latest"
-werf = "latest"
+werf = "2"
 yazi = "latest"
 zellij = "latest"
 "pypi:copier" = "latest"
@@ -85,6 +85,7 @@ fi
 
 [dotfiles]
 "~/.config/fastfetch" = { mode = "copy" }
+"~/.config/ghostty" = { mode = "copy" }
 "~/.config/git" = { mode = "copy" }
 "~/.config/mise" = { mode = "copy" }
 "~/.config/ruff" = { mode = "copy" }
