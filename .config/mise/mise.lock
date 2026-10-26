@@ -3,64 +3,73 @@
 lockfile_version = 3
 
 [[tools.aube]]
-version = "2.8.2"
+version = "2.8.3"
 backend = "packslip:github.com/aubepkg/aube"
 specifiers = ["latest"]
 
 [tools.aube."platforms.linux-arm64"]
-checksum = "sha256:1a4d640140f6def6a18fdee28d33a54ac818f4b28e32c36ae66c452e1e41a400"
-url = "https://github.com/aubepkg/aube/releases/download/v2.8.2/aube-v2.8.2-aarch64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:a66fdb0676b44f3046f6e8de34ef394efcb654cde2b35d977686c00df8778634"
+url = "https://github.com/aubepkg/aube/releases/download/v2.8.3/aube-v2.8.3-aarch64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
+repository_ids = { repository = "1214542327" }
 
 [tools.aube."platforms.linux-arm64-musl"]
-checksum = "sha256:dc859a371c6ff8636022b55ebece0088e573b904b6deb768ee0eb0c1a5cb9472"
-url = "https://github.com/aubepkg/aube/releases/download/v2.8.2/aube-v2.8.2-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:48794b24029f60857d295b9b9192554b2b89d18f555e0ef6c585c133e0ff91ff"
+url = "https://github.com/aubepkg/aube/releases/download/v2.8.3/aube-v2.8.3-aarch64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
+repository_ids = { repository = "1214542327" }
 
 [tools.aube."platforms.linux-x64"]
-checksum = "sha256:778dec9a531f362ef28dd8de025ea760ef53ab7cd363841be51d383093843ff4"
-url = "https://github.com/aubepkg/aube/releases/download/v2.8.2/aube-v2.8.2-x86_64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:ad727102618a0e1b92e6ffc08762196d2fc8856faad883056e6e1db2c938cfda"
+url = "https://github.com/aubepkg/aube/releases/download/v2.8.3/aube-v2.8.3-x86_64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
+repository_ids = { repository = "1214542327" }
 
 [tools.aube."platforms.linux-x64-musl"]
-checksum = "sha256:2f8850cf7860385ed859b12d63ea01a475e4be989dc7ecdca1a27954e8cd955f"
-url = "https://github.com/aubepkg/aube/releases/download/v2.8.2/aube-v2.8.2-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:51e6dd4660cd5bbbf14de2872a2c56c8713fba395db08f0b434b22be5c709f68"
+url = "https://github.com/aubepkg/aube/releases/download/v2.8.3/aube-v2.8.3-x86_64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
+repository_ids = { repository = "1214542327" }
 
 [tools.aube."platforms.macos-arm64"]
-checksum = "sha256:81a509aea6f0ef7339e173e0e6f0f44154fe2a49284a1942255dc5f09429e44b"
-url = "https://github.com/aubepkg/aube/releases/download/v2.8.2/aube-v2.8.2-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:83a509c5bc8a4ce161f68f2325383b269368d682c2cc3b42669e67c235a301e2"
+url = "https://github.com/aubepkg/aube/releases/download/v2.8.3/aube-v2.8.3-aarch64-apple-darwin.tar.gz"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
+repository_ids = { repository = "1214542327" }
 
 [tools.aube."platforms.windows-x64"]
-checksum = "sha256:d033e7a34593715c278a5ef4611ca11c6f1c9f1f8179c87b2707206448fbba97"
-url = "https://github.com/aubepkg/aube/releases/download/v2.8.2/aube-v2.8.2-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:79f4b2ea7b3dc0dcf0adcfb94c18f07a2b22b92624249d66bbe2bfd049e7186d"
+url = "https://github.com/aubepkg/aube/releases/download/v2.8.3/aube-v2.8.3-x86_64-pc-windows-msvc.zip"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
+repository_ids = { repository = "1214542327" }
 
 [[tools.btop]]
-version = "1.4.7"
+version = "1.4.8"
 backend = "aqua:aristocratos/btop"
 specifiers = ["latest"]
 
 [tools.btop."platforms.linux-arm64"]
-checksum = "sha256:6270de0ef4c84cf0eea61cb148b3ad9ae91a11e9c3309867ffc6b3751024c252"
-url = "https://github.com/aristocratos/btop/releases/download/v1.4.7/btop-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/aristocratos/btop/releases/assets/409963650"
+checksum = "sha256:95328e26ab08f42033af26628e2d169206a5a420f35669ce17459ef85114c14c"
+checksum_source = "mise-versions"
+url = "https://github.com/aristocratos/btop/releases/download/v1.4.8/btop-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/aristocratos/btop/releases/assets/674452393"
 
 [tools.btop."platforms.linux-arm64-musl"]
-checksum = "sha256:6270de0ef4c84cf0eea61cb148b3ad9ae91a11e9c3309867ffc6b3751024c252"
-url = "https://github.com/aristocratos/btop/releases/download/v1.4.7/btop-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/aristocratos/btop/releases/assets/409963650"
+checksum = "sha256:95328e26ab08f42033af26628e2d169206a5a420f35669ce17459ef85114c14c"
+checksum_source = "mise-versions"
+url = "https://github.com/aristocratos/btop/releases/download/v1.4.8/btop-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/aristocratos/btop/releases/assets/674452393"
 
 [tools.btop."platforms.linux-x64"]
-checksum = "sha256:5099054dd6a101bd12eb6ff3702a9a6a3f57aaa27923a0da478ae5b517faf335"
-url = "https://github.com/aristocratos/btop/releases/download/v1.4.7/btop-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/aristocratos/btop/releases/assets/409963672"
+checksum = "sha256:af589cf82cc9ea9c29ce050b9239a13bef2d1492256d476156e1054a42ce89ad"
+url = "https://github.com/aristocratos/btop/releases/download/v1.4.8/btop-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/aristocratos/btop/releases/assets/674452462"
 
 [tools.btop."platforms.linux-x64-musl"]
-checksum = "sha256:5099054dd6a101bd12eb6ff3702a9a6a3f57aaa27923a0da478ae5b517faf335"
-url = "https://github.com/aristocratos/btop/releases/download/v1.4.7/btop-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/aristocratos/btop/releases/assets/409963672"
+checksum = "sha256:af589cf82cc9ea9c29ce050b9239a13bef2d1492256d476156e1054a42ce89ad"
+checksum_source = "mise-versions"
+url = "https://github.com/aristocratos/btop/releases/download/v1.4.8/btop-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/aristocratos/btop/releases/assets/674452462"
 
 [[tools.cliamp]]
 version = "2.3.0"
@@ -191,36 +200,43 @@ specifiers = ["latest"]
 checksum = "sha256:6eea3acbb0cdc06ad5b5f90906c99e6a8f5426a002c7057784b21c6c6f0e6700"
 url = "https://github.com/jdx/fnox/releases/download/v1.42.1/fnox-aarch64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/fnox/.github/workflows/release.yml"
+repository_ids = { repository = "1078762196" }
 
 [tools.fnox."platforms.linux-arm64-musl"]
 checksum = "sha256:ccf0b37c87ce3ae90df2b759ca88b7210e2dbecef4976c8c05cfed648f45089f"
 url = "https://github.com/jdx/fnox/releases/download/v1.42.1/fnox-aarch64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/fnox/.github/workflows/release.yml"
+repository_ids = { repository = "1078762196" }
 
 [tools.fnox."platforms.linux-x64"]
 checksum = "sha256:1c6f91f5e4ee6d53edc42acd56fa211dfc6ffd7cdef4ae7dd224490f5fadd8a0"
 url = "https://github.com/jdx/fnox/releases/download/v1.42.1/fnox-x86_64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/fnox/.github/workflows/release.yml"
+repository_ids = { repository = "1078762196" }
 
 [tools.fnox."platforms.linux-x64-musl"]
 checksum = "sha256:6ec01a0c8dc57da6d0b88d71ea6b4f65c7f8ee3c74c740532d08b89b094cba7f"
 url = "https://github.com/jdx/fnox/releases/download/v1.42.1/fnox-x86_64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/fnox/.github/workflows/release.yml"
+repository_ids = { repository = "1078762196" }
 
 [tools.fnox."platforms.macos-arm64"]
 checksum = "sha256:06cd00e066958d49d96ae137f2162b92cfb0a66e4eb5a9e6efad32a306bf8b95"
 url = "https://github.com/jdx/fnox/releases/download/v1.42.1/fnox-aarch64-apple-darwin.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/fnox/.github/workflows/release.yml"
+repository_ids = { repository = "1078762196" }
 
 [tools.fnox."platforms.macos-x64"]
 checksum = "sha256:29df4de085277c5b70637c3f065824060f314e7a56c8d34ea8074d5af1f8623b"
 url = "https://github.com/jdx/fnox/releases/download/v1.42.1/fnox-x86_64-apple-darwin.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/fnox/.github/workflows/release.yml"
+repository_ids = { repository = "1078762196" }
 
 [tools.fnox."platforms.windows-x64"]
 checksum = "sha256:64ff3ace04c22fa66457016881d0030b1b44cd2f46983dd2948682ee3c86d6f7"
 url = "https://github.com/jdx/fnox/releases/download/v1.42.1/fnox-x86_64-pc-windows-msvc.zip"
 signer = "sigstore-oidc:https://github.com/jdx/fnox/.github/workflows/release.yml"
+repository_ids = { repository = "1078762196" }
 
 [[tools.fzf]]
 version = "0.74.5"
@@ -605,44 +621,51 @@ url = "https://github.com/go-task/task/releases/download/v3.54.0/task_windows_am
 url_api = "https://api.github.com/repos/go-task/task/releases/assets/604090005"
 
 [[tools.usage]]
-version = "7.1.1"
+version = "7.1.2"
 backend = "packslip:github.com/jdx/usage"
 specifiers = ["latest"]
 
 [tools.usage."platforms.linux-arm64"]
-checksum = "sha256:596a2a7a2d460d6a80ef4328ffb7c56e4577fe2e4dba942d036f90d14354534d"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-aarch64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:5171193a0397cc054d5e009cbaf51799598241b8175b4bfd91f8640bbfc91a7a"
+url = "https://github.com/jdx/usage/releases/download/v7.1.2/usage-aarch64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
+repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.linux-arm64-musl"]
-checksum = "sha256:5f5d8ed6295130fb82df9a5ee0fabb226c80a7085eda849c18edb561b76f4d97"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:d4675f05c0a707b24e5b5bdac57c23b584209305e70adc11e616e8f26b36104f"
+url = "https://github.com/jdx/usage/releases/download/v7.1.2/usage-aarch64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
+repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.linux-x64"]
-checksum = "sha256:dcc37cb5fb59088bab82e6f5f752c002a526dd9b35909be76d8459f46b4c30ca"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-x86_64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:185a79a3fb0cdc0a09e22bad5d197a47518ad3ea3cc5b6f1e53e9f7ae7908079"
+url = "https://github.com/jdx/usage/releases/download/v7.1.2/usage-x86_64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
+repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.linux-x64-musl"]
-checksum = "sha256:afea9fb0636305e011860ce2f3de26b5702c7bc8ffce8eb32aa9c95ff7f5804f"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:da9ce7c2c0220f336b7ade208c7755ae3dd137642f90f6ec460ba821d809754b"
+url = "https://github.com/jdx/usage/releases/download/v7.1.2/usage-x86_64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
+repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.macos-arm64"]
-checksum = "sha256:50234db60947885bf87cda5ce28ee9c13924b6694528737bf6a7327e980f3bcd"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:febcc62e79cf7278e532b36073847812711b4e6e9a381663ca796a52b772ba33"
+url = "https://github.com/jdx/usage/releases/download/v7.1.2/usage-universal-apple-darwin.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
+repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.macos-x64"]
-checksum = "sha256:50234db60947885bf87cda5ce28ee9c13924b6694528737bf6a7327e980f3bcd"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:febcc62e79cf7278e532b36073847812711b4e6e9a381663ca796a52b772ba33"
+url = "https://github.com/jdx/usage/releases/download/v7.1.2/usage-universal-apple-darwin.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
+repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.windows-x64"]
-checksum = "sha256:75659545f16f84474c32cebb6ee3e304aedf63286c31ec73c3cab695fb56a6aa"
-url = "https://github.com/jdx/usage/releases/download/v7.1.1/usage-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:061fe944671b7348d034ccaf016c457f896597dbddc18ee2d6858bd88bdb1519"
+url = "https://github.com/jdx/usage/releases/download/v7.1.2/usage-x86_64-pc-windows-msvc.zip"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
+repository_ids = { repository = "677629099" }
 
 [[tools.uv]]
 version = "0.13.5"
@@ -697,9 +720,11 @@ backend = "aqua:werf/werf"
 specifiers = ["2"]
 
 [tools.werf."platforms.linux-arm64"]
+checksum = "sha256:6064372c8fb65747a9381559217c45feb901a5d4940243ef415253cf2adf13e4"
 url = "https://tuf.werf.io/targets/releases/2.83.1/linux-arm64/bin/werf"
 
 [tools.werf."platforms.linux-arm64-musl"]
+checksum = "sha256:6064372c8fb65747a9381559217c45feb901a5d4940243ef415253cf2adf13e4"
 url = "https://tuf.werf.io/targets/releases/2.83.1/linux-arm64/bin/werf"
 
 [tools.werf."platforms.linux-x64"]
@@ -707,15 +732,19 @@ checksum = "blake3:15f4160c3955cc91285ec0fd72a16843a4bf52dfbbee221b9a04c715f1deb
 url = "https://tuf.werf.io/targets/releases/2.83.1/linux-amd64/bin/werf"
 
 [tools.werf."platforms.linux-x64-musl"]
+checksum = "sha256:2c34be96b0a061952914c48e2d599ad3aa7440cfb34d956a0c4a11d7b65ee3cd"
 url = "https://tuf.werf.io/targets/releases/2.83.1/linux-amd64/bin/werf"
 
 [tools.werf."platforms.macos-arm64"]
+checksum = "sha256:a7723c7b3693908d757b335972b823c914c49b97a8dff9f413bcf0648324bb86"
 url = "https://tuf.werf.io/targets/releases/2.83.1/darwin-arm64/bin/werf"
 
 [tools.werf."platforms.macos-x64"]
+checksum = "sha256:91acbab3dad7dcdd8c0d1ba9cbba5d27d4ee391f70bc927f446ffab6bc3b98b2"
 url = "https://tuf.werf.io/targets/releases/2.83.1/darwin-amd64/bin/werf"
 
 [tools.werf."platforms.windows-x64"]
+checksum = "sha256:8a97f4ef0056d3181c6eb015f5ccb3cd2babce89c2e39e4393019b45e64f6905"
 url = "https://tuf.werf.io/targets/releases/2.83.1/windows-amd64/bin/werf.exe"
 
 [[tools.yazi]]
