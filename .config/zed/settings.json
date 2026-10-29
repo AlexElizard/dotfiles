@@ -14,10 +14,6 @@
       "model": "gpt-6.1-sol",
       "enable_thinking": true,
     },
-    "compaction_model": {
-      "provider": "openai-subscribed",
-      "model": "gpt-6-astra",
-    },
   },
   "auto_install_extensions": {
     "dockerfile": true,
