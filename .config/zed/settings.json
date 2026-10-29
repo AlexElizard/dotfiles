@@ -49,7 +49,7 @@
   // https://zed.dev/docs/configuring-languages#choosing-language-servers
   "languages": {
     "Python": {
-      "language_servers": ["ruff", "ty"],
+      "language_servers": ["ruff", "pyrefly"],
     },
   },
   "lsp": {
