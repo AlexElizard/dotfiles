@@ -34,6 +34,12 @@
         "MISE_EXPERIMENTAL": "1",
       },
     },
+    "playwright": {
+      "enabled": true,
+      "remote": false,
+      "command": "aube",
+      "args": ["dlx", "@playwright/mcp@latest"],
+    },
   },
   "format_on_save": "on",
   "git_panel": {
