@@ -2,11 +2,8 @@
 [
   {
     "label": "Git",
-    "command": "ptyxis --execute \"lazygit -p $ZED_WORKTREE_ROOT\"",
+    "command": "ghostty -e lazygit -p $ZED_WORKTREE_ROOT",
     "hide": "on_success",
-    "shell": {
-      "program": "fish",
-    },
   },
   {
     "label": "Hard reset to $ZED_GIT_SHA_SHORT",
