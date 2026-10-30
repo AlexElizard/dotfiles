@@ -4,6 +4,7 @@ min_version = "2026.10.23"
 [settings]
 dotfiles.root = "~/.dotfiles"  # ~ = $HOME on Linux, %USERPROFILE% on Windows
 dotfiles.default_mode = "copy"
+experimental = true
 lockfile = true
 
 ## [DevTools] ##########################################################################

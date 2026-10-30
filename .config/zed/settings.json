@@ -36,9 +36,6 @@
       "remote": false,
       "command": "mise",
       "args": ["mcp"],
-      "env": {
-        "MISE_EXPERIMENTAL": "1",
-      },
     },
     "playwright": {
       "enabled": true,
