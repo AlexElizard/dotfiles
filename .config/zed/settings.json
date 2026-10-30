@@ -25,6 +25,12 @@
     "toml": true,
   },
   "context_servers": {
+    "context7": {
+      "enabled": true,
+      "remote": false,
+      "command": "aube",
+      "args": ["dlx", "@upstash/context7-mcp"],
+    },
     "mise": {
       "enabled": true,
       "remote": false,
