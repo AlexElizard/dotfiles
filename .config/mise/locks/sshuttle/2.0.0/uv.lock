@@ -1,0 +1,26 @@
+version = 1
+revision = 5
+requires-python = ">=3.10, <4.0"
+
+[options]
+exclude-newer = "2026-10-30T05:43:39.738476363Z"
+
+[[package]]
+name = "mise-pypi-tool-environment"
+version = "0.0.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "sshuttle" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "sshuttle", specifier = "==2.0.0" }]
+
+[[package]]
+name = "sshuttle"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple/" }
+sdist = { url = "https://files.pythonhosted.org/packages/0b/80/a656e8958cd35102aeaa2e5c4edf6d781d806df58650fa4368c8102df47d/sshuttle-2.0.0.tar.gz", hash = "sha256:7347ff01093d471c4e9a299b9c7abd4a18eac4fddfd4cf868bedc623cab71091", size = 206114, upload-time = "2026-09-28T06:08:58.723Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/25/1d/c409e26b9d5d26e6f07466c3d4662abb1c3ca4810424f66f38e1b5e54f33/sshuttle-2.0.0-py3-none-any.whl", hash = "sha256:506a8cad2f047ca42f0d784654cb3459e2193bfad79d0a03734e0e07473f2bbb", size = 82563, upload-time = "2026-09-28T06:08:57.314Z" },
+]
