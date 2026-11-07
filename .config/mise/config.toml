@@ -1,4 +1,4 @@
-min_version = "2026.10.23"
+min_version = "2026.11.3"
 
 ## [Configuration] #####################################################################
 [settings]
@@ -19,7 +19,9 @@ fzf = "latest"
 herdr = "latest"
 lazygit = "latest"
 minikube = "latest"
+node = "26"
 pitchfork = "latest"
+python = "3.14"
 ripgrep = "latest"
 ruff = "latest"
 sshuttle = "latest"
@@ -32,7 +34,7 @@ werf = "2"
 yazi = "latest"
 zellij = "latest"
 "pypi:copier" = "latest"
-"pypi:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql" }
+"pypi:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql", python = "3.14" }
 
 ## [Bootstrap] #########################################################################
 [bootstrap.dnf.repos]
