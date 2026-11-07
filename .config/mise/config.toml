@@ -89,6 +89,7 @@ fi
 """
 
 [dotfiles]
+"~/.config/containers" = { mode = "copy" }
 "~/.config/fastfetch" = { mode = "copy" }
 "~/.config/ghostty" = { mode = "copy" }
 "~/.config/git" = { mode = "copy" }
