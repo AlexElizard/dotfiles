@@ -96,3 +96,4 @@ fi
 "~/.config/mise" = { mode = "copy" }
 "~/.config/ruff" = { mode = "copy" }
 "~/.config/zed" = { mode = "copy" }
+"~/Templates" = { mode = "copy" }
