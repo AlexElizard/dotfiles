@@ -3,43 +3,43 @@
 lockfile_version = 3
 
 [[tools.aube]]
-version = "2.10.0"
+version = "2.10.1"
 backend = "packslip:github.com/aubepkg/aube"
 specifiers = ["latest"]
 
 [tools.aube."platforms.linux-arm64"]
-checksum = "sha256:cce81d91e7468fc784c15b580320c5f94b4867f41e7e097c4ba23b0587937b7e"
-url = "https://github.com/aubepkg/aube/releases/download/v2.10.0/aube-v2.10.0-aarch64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:c64f55a43ee7ca4a19fbbf3be0eed161c24c9858bdcdaea024b69eafbc71ad15"
+url = "https://github.com/aubepkg/aube/releases/download/v2.10.1/aube-v2.10.1-aarch64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
 repository_ids = { repository = "1214542327" }
 
 [tools.aube."platforms.linux-arm64-musl"]
-checksum = "sha256:7541658766b989fbb6560c34275b473d7fb96a5d97d21d639e5df7089c1573a5"
-url = "https://github.com/aubepkg/aube/releases/download/v2.10.0/aube-v2.10.0-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:c437e0c446652a32ac367b81c469f0b5aa0a3bee734c7948c18d11f568365db0"
+url = "https://github.com/aubepkg/aube/releases/download/v2.10.1/aube-v2.10.1-aarch64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
 repository_ids = { repository = "1214542327" }
 
 [tools.aube."platforms.linux-x64"]
-checksum = "sha256:50d76d216495a9fe28f6cc9817d02f6c080c9c483c9f8c6b29a901bd073488ff"
-url = "https://github.com/aubepkg/aube/releases/download/v2.10.0/aube-v2.10.0-x86_64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:2e7206a50cf3dc97b8381ce168a2639f2cf80e17b681a5c47a68ab763fac0b68"
+url = "https://github.com/aubepkg/aube/releases/download/v2.10.1/aube-v2.10.1-x86_64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
 repository_ids = { repository = "1214542327" }
 
 [tools.aube."platforms.linux-x64-musl"]
-checksum = "sha256:51c88c48f784aa82ca6f9e2ced73aa9c51e5482a5be0e1670b88cc59769fe2eb"
-url = "https://github.com/aubepkg/aube/releases/download/v2.10.0/aube-v2.10.0-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:00a0bc98003aa1d3b091f08036bb218e26149aed8d02064cf41984f53a4187db"
+url = "https://github.com/aubepkg/aube/releases/download/v2.10.1/aube-v2.10.1-x86_64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
 repository_ids = { repository = "1214542327" }
 
 [tools.aube."platforms.macos-arm64"]
-checksum = "sha256:8b403713af1ee52da4a3d9cdbb9f0e3dbdd1247465b49841c4fefd8e2f1bc83f"
-url = "https://github.com/aubepkg/aube/releases/download/v2.10.0/aube-v2.10.0-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:28019c741c28bd90314aa679312d4dc887c2e5a6cb59d018e7624ed9f457f5c8"
+url = "https://github.com/aubepkg/aube/releases/download/v2.10.1/aube-v2.10.1-aarch64-apple-darwin.tar.gz"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
 repository_ids = { repository = "1214542327" }
 
 [tools.aube."platforms.windows-x64"]
-checksum = "sha256:ff01fc4175d30dc2be40f6145d00decef126a939de0b89522b1178e8cec97c51"
-url = "https://github.com/aubepkg/aube/releases/download/v2.10.0/aube-v2.10.0-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:5b903b6db4ba81cf288e2248426368f31de579e1986e1e0c31f22c3a4c9cd416"
+url = "https://github.com/aubepkg/aube/releases/download/v2.10.1/aube-v2.10.1-x86_64-pc-windows-msvc.zip"
 signer = "sigstore-oidc:https://github.com/aubepkg/aube/.github/workflows/release.yml"
 repository_ids = { repository = "1214542327" }
 
@@ -303,6 +303,79 @@ checksum_source = "mise-versions"
 url = "https://github.com/junegunn/fzf/releases/download/v0.75.0/fzf-0.75.0-windows_amd64.zip"
 url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/720590885"
 
+[[tools.helm]]
+version = "4.3.2"
+backend = "aqua:helm/helm"
+specifiers = ["latest"]
+
+[tools.helm."platforms.linux-arm64"]
+checksum = "sha256:df31cb61680ef728f82c770e5280dd565617bee6b039d37e85c677288be4bbb0"
+url = "https://get.helm.sh/helm-v4.3.2-linux-arm64.tar.gz"
+
+[tools.helm."platforms.linux-arm64-musl"]
+checksum = "sha256:df31cb61680ef728f82c770e5280dd565617bee6b039d37e85c677288be4bbb0"
+url = "https://get.helm.sh/helm-v4.3.2-linux-arm64.tar.gz"
+
+[tools.helm."platforms.linux-x64"]
+checksum = "sha256:d1c0278d46beab79582d7e50f5b3dc206944ba8e577cde618513fd07daa53983"
+url = "https://get.helm.sh/helm-v4.3.2-linux-amd64.tar.gz"
+
+[tools.helm."platforms.linux-x64-musl"]
+checksum = "sha256:d1c0278d46beab79582d7e50f5b3dc206944ba8e577cde618513fd07daa53983"
+url = "https://get.helm.sh/helm-v4.3.2-linux-amd64.tar.gz"
+
+[tools.helm."platforms.macos-arm64"]
+checksum = "sha256:6f3421de3a8cc2ac578c8cfb33b8edde290dde2871bc1bab12e24f2e5caeaa90"
+url = "https://get.helm.sh/helm-v4.3.2-darwin-arm64.tar.gz"
+
+[tools.helm."platforms.macos-x64"]
+checksum = "sha256:9e0068e9ae18c441d27388190ee7f53ae65eba44bfe910b40bdac44c4b51fa71"
+url = "https://get.helm.sh/helm-v4.3.2-darwin-amd64.tar.gz"
+
+[tools.helm."platforms.windows-x64"]
+checksum = "sha256:03af0db72f7ba1108065365a21e2a9e581a6fdf9fd8191156373e17aab75e4dc"
+url = "https://get.helm.sh/helm-v4.3.2-windows-amd64.tar.gz"
+
+[[tools.helm-docs]]
+version = "1.14.2"
+backend = "aqua:norwoodj/helm-docs"
+specifiers = ["latest"]
+
+[tools.helm-docs."platforms.linux-arm64"]
+checksum = "sha256:c3787212332386dcd122debef7848feb165aa701467ae3e3442df7638f3ac4e4"
+url = "https://github.com/norwoodj/helm-docs/releases/download/v1.14.2/helm-docs_1.14.2_Linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/norwoodj/helm-docs/releases/assets/178327216"
+
+[tools.helm-docs."platforms.linux-arm64-musl"]
+checksum = "sha256:c3787212332386dcd122debef7848feb165aa701467ae3e3442df7638f3ac4e4"
+url = "https://github.com/norwoodj/helm-docs/releases/download/v1.14.2/helm-docs_1.14.2_Linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/norwoodj/helm-docs/releases/assets/178327216"
+
+[tools.helm-docs."platforms.linux-x64"]
+checksum = "sha256:a8cf72ada34fad93285ba2a452b38bdc5bd52cc9a571236244ec31022928d6cc"
+url = "https://github.com/norwoodj/helm-docs/releases/download/v1.14.2/helm-docs_1.14.2_Linux_x86_64.tar.gz"
+url_api = "https://api.github.com/repos/norwoodj/helm-docs/releases/assets/178327210"
+
+[tools.helm-docs."platforms.linux-x64-musl"]
+checksum = "sha256:a8cf72ada34fad93285ba2a452b38bdc5bd52cc9a571236244ec31022928d6cc"
+url = "https://github.com/norwoodj/helm-docs/releases/download/v1.14.2/helm-docs_1.14.2_Linux_x86_64.tar.gz"
+url_api = "https://api.github.com/repos/norwoodj/helm-docs/releases/assets/178327210"
+
+[tools.helm-docs."platforms.macos-arm64"]
+checksum = "sha256:2d8399db5b33d240d5f8985241bcf5483563150b968e3229823822979f3e4b8b"
+url = "https://github.com/norwoodj/helm-docs/releases/download/v1.14.2/helm-docs_1.14.2_Darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/norwoodj/helm-docs/releases/assets/178327215"
+
+[tools.helm-docs."platforms.macos-x64"]
+checksum = "sha256:b2f1ffd0feef8dc0901a38a2053481d1d67b63ca30da4ac774166c6b52fa2245"
+url = "https://github.com/norwoodj/helm-docs/releases/download/v1.14.2/helm-docs_1.14.2_Darwin_x86_64.tar.gz"
+url_api = "https://api.github.com/repos/norwoodj/helm-docs/releases/assets/178327211"
+
+[tools.helm-docs."platforms.windows-x64"]
+checksum = "sha256:3c54fd78d99e2769cf83a0faf12cf6cd4de1cac6ed7bee8d908a2c8fc23f538c"
+url = "https://github.com/norwoodj/helm-docs/releases/download/v1.14.2/helm-docs_1.14.2_Windows_x86_64.tar.gz"
+url_api = "https://api.github.com/repos/norwoodj/helm-docs/releases/assets/178327219"
+
 [[tools.herdr]]
 version = "0.9.5"
 backend = "aqua:herdrdev/herdr"
@@ -463,31 +536,31 @@ checksum = "sha256:e2edda75bfb089654705cf65a13b58933bfd5f57148e8ebda916f58a2474f
 url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-win-x64.zip"
 
 [[tools.pitchfork]]
-version = "2.34.0"
+version = "2.35.0"
 backend = "packslip:github.com/jdx/pitchfork"
 specifiers = ["latest"]
 
 [tools.pitchfork."platforms.linux-arm64"]
-checksum = "sha256:1fd3a99061b41744a3c77725c86ad16a1ce6b325c336723352eddc38f5c6f98e"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.34.0/pitchfork-aarch64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:92f53082163514f4f1ab6e228a1264a2d98f685f8605863b75277c4298dfb3d5"
+url = "https://github.com/jdx/pitchfork/releases/download/v2.35.0/pitchfork-aarch64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/pitchfork/.github/workflows/release.yml"
 repository_ids = { repository = "899500793" }
 
 [tools.pitchfork."platforms.linux-x64"]
-checksum = "sha256:2e5182e32909ff259357c6761b0e8c8c68d3b352223f72bfba6683e702031ad3"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.34.0/pitchfork-x86_64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:dc361973279b2ba0f76fab0e8423125870c0747263be0a1e7b165fb41317e837"
+url = "https://github.com/jdx/pitchfork/releases/download/v2.35.0/pitchfork-x86_64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/pitchfork/.github/workflows/release.yml"
 repository_ids = { repository = "899500793" }
 
 [tools.pitchfork."platforms.macos-arm64"]
-checksum = "sha256:27dad04ac4cf54cd3315ca6ac1948fb811a8c02a1a83ba5213a137618b535a0a"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.34.0/pitchfork-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:e1f0a9e233559af12f9d636b1959c3c5b0a24ae255ea36799892da3f35c30f79"
+url = "https://github.com/jdx/pitchfork/releases/download/v2.35.0/pitchfork-aarch64-apple-darwin.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/pitchfork/.github/workflows/release.yml"
 repository_ids = { repository = "899500793" }
 
 [tools.pitchfork."platforms.windows-x64"]
-checksum = "sha256:960e81bc08adfa8b0d21897590475c07660f1eb72f44daeb55ba36f5ff778436"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.34.0/pitchfork-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:584b23cf2dd97337389711e675ff2cc9de88104874781e80afe0acb5308ee92b"
+url = "https://github.com/jdx/pitchfork/releases/download/v2.35.0/pitchfork-x86_64-pc-windows-msvc.zip"
 signer = "sigstore-oidc:https://github.com/jdx/pitchfork/.github/workflows/release.yml"
 repository_ids = { repository = "899500793" }
 
@@ -767,131 +840,98 @@ url = "https://github.com/go-task/task/releases/download/v3.54.0/task_windows_am
 url_api = "https://api.github.com/repos/go-task/task/releases/assets/604090005"
 
 [[tools.usage]]
-version = "7.3.0"
+version = "7.4.0"
 backend = "packslip:github.com/jdx/usage"
 specifiers = ["latest"]
 
 [tools.usage."platforms.linux-arm64"]
-checksum = "sha256:b845455e5fda89983fe6860066b2f520ba28cb0a265d64f2fde0e950eb9e0d07"
-url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-aarch64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:63ec67fd6bc8c54ad9e2775e95d6eea565565a30568d65c75be8423b3dd842ea"
+url = "https://github.com/jdx/usage/releases/download/v7.4.0/usage-aarch64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.linux-arm64-musl"]
-checksum = "sha256:3bfcf7b5cff0daec5629f54dd15f40001a09bab551663d6e937c99c5716ae094"
-url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:2b522480691d6af6bb2a96de28cf9edbd90af3a52195cefe0d19217c18652c4a"
+url = "https://github.com/jdx/usage/releases/download/v7.4.0/usage-aarch64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.linux-x64"]
-checksum = "sha256:78d9d765bb87c9377e95fd816ab436a5001d95d28b3b9bf7e405ed3eccfe025c"
-url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-x86_64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:c66011f163619cf3946182498eedd16966bf3d32a6c6cf28c73c8034dfe467d6"
+url = "https://github.com/jdx/usage/releases/download/v7.4.0/usage-x86_64-unknown-linux-gnu.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.linux-x64-musl"]
-checksum = "sha256:9af5d220332a0178c38786eac6deb9fa67b767f4c3d4b2e4c8e6bd5659975e86"
-url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:223f8819cc26543ffcc11161659497450c6bdbe947ad8580b70183dac4c9d182"
+url = "https://github.com/jdx/usage/releases/download/v7.4.0/usage-x86_64-unknown-linux-musl.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.macos-arm64"]
-checksum = "sha256:3201ab26da21e11cbbf3b75f81da65a502e7774e014bd77956cab13e61e73b87"
-url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:606dbdda615111940c6b39e1cb64dbf4871839304146e8e40e7302312be095d6"
+url = "https://github.com/jdx/usage/releases/download/v7.4.0/usage-universal-apple-darwin.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.macos-x64"]
-checksum = "sha256:3201ab26da21e11cbbf3b75f81da65a502e7774e014bd77956cab13e61e73b87"
-url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-universal-apple-darwin.tar.gz"
+checksum = "sha256:606dbdda615111940c6b39e1cb64dbf4871839304146e8e40e7302312be095d6"
+url = "https://github.com/jdx/usage/releases/download/v7.4.0/usage-universal-apple-darwin.tar.gz"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [tools.usage."platforms.windows-x64"]
-checksum = "sha256:0156c5ff413cb49275b109a44b0bb388d8aebf4ce2f47db4902333d3fbee46cc"
-url = "https://github.com/jdx/usage/releases/download/v7.3.0/usage-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:a0bc6718039bbb4289e19981a2cf82a7e1d8509eb426cb27fcb90c0dc34d8b66"
+url = "https://github.com/jdx/usage/releases/download/v7.4.0/usage-x86_64-pc-windows-msvc.zip"
 signer = "sigstore-oidc:https://github.com/jdx/usage/.github/workflows/publish-cli.yml"
 repository_ids = { repository = "677629099" }
 
 [[tools.uv]]
-version = "0.13.8"
+version = "0.13.9"
 backend = "aqua:astral-sh/uv"
 specifiers = ["latest"]
 
 [tools.uv."platforms.linux-arm64"]
-checksum = "sha256:74f2f5c6024d397481db228db8fc25eed420db192243f88438c118e7e013e585"
-url = "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/740313629"
+checksum = "sha256:0797542018e541a9288855df555c8077eed06f7a47d206362030480e8ecc9f3d"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/758513657"
 provenance = "github-attestations"
 
 [tools.uv."platforms.linux-arm64-musl"]
-checksum = "sha256:0c6f8593fcf1eadfc60e663b685c408267559d7c5d61c689bbb9f3a7e369ba32"
-url = "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/740313665"
+checksum = "sha256:37fbb7c5bc66cf99c12aa881949d216181e201dec449772c4329e56487d61179"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/758513671"
 provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64"]
-checksum = "sha256:5acfd9177cfecf0bf87578f059728215ccc884388988f55f7a65041b57387d91"
-url = "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/740313966"
+checksum = "sha256:a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/758513954"
 provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64-musl"]
-checksum = "sha256:61fb26dabc4f0cf1d050fc6c67d40e43e4fae2994af21ebc1e050b233bf2b5ed"
-url = "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/740313983"
+checksum = "sha256:58ccf5f1792b8a5a88d01bc910ea131a8b3db4a319a17ad5fad75e0845a3e271"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/758513984"
 provenance = "github-attestations"
 
 [tools.uv."platforms.macos-arm64"]
-checksum = "sha256:6b71028a6b904f2ae3340ef52e595512de807d06c0a20eaef2f692581b246558"
-url = "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/740313603"
+checksum = "sha256:5aeca67f2283f75235de40d0bd9c0a5bbc5fce23b6d48b3bf9fa1b2db08382ca"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/758513631"
 provenance = "github-attestations"
 
 [tools.uv."platforms.macos-x64"]
-checksum = "sha256:a04c2ffeac28b2003a2c13caf538ab425fcd7def3e4a41571f4a8fb370a66af3"
-url = "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/740313917"
+checksum = "sha256:617a3211261b0fc739562f0071aa34e9739797c510208ede8e2977c30903d041"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/758513912"
 provenance = "github-attestations"
 
 [tools.uv."platforms.windows-x64"]
-checksum = "sha256:529e78a9cec6cd7e3e014f7ecd8bda0c113969d4ed0f2efeedb85c30943325b8"
-url = "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/740313927"
+checksum = "sha256:edd61f7f5728a56cc62455386661860bdfc7bab65872f39b0c25bdcc1d8e1beb"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/758513940"
 provenance = "github-attestations"
-
-[[tools.werf]]
-version = "2.84.0"
-backend = "aqua:werf/werf"
-specifiers = ["2"]
-
-[tools.werf."platforms.linux-arm64"]
-checksum = "sha256:d045546419f3cf2de0fc20a2684ccc1f75c188552aa466445a4260a94fa21dd6"
-url = "https://tuf.werf.io/targets/releases/2.84.0/linux-arm64/bin/werf"
-
-[tools.werf."platforms.linux-arm64-musl"]
-checksum = "sha256:d045546419f3cf2de0fc20a2684ccc1f75c188552aa466445a4260a94fa21dd6"
-url = "https://tuf.werf.io/targets/releases/2.84.0/linux-arm64/bin/werf"
-
-[tools.werf."platforms.linux-x64"]
-checksum = "blake3:3d988a2a65c1b480eb9254a797c129443cfa421624b3e66dfdc2f66830a6bd3e"
-url = "https://tuf.werf.io/targets/releases/2.84.0/linux-amd64/bin/werf"
-
-[tools.werf."platforms.linux-x64-musl"]
-checksum = "sha256:b08d4408d8a9b09387e6994afb779e46c11635135fdb8b2312b49255685a2050"
-url = "https://tuf.werf.io/targets/releases/2.84.0/linux-amd64/bin/werf"
-
-[tools.werf."platforms.macos-arm64"]
-checksum = "sha256:2c2f37ea1e0a8fda6ed5846cdde4d5f32c1c4b2c7a32cfa53c065cf173a7a3b9"
-url = "https://tuf.werf.io/targets/releases/2.84.0/darwin-arm64/bin/werf"
-
-[tools.werf."platforms.macos-x64"]
-checksum = "sha256:bafc71acfb5090768745f2872becf76137df8c3ccde072d8712f75271714ef27"
-url = "https://tuf.werf.io/targets/releases/2.84.0/darwin-amd64/bin/werf"
-
-[tools.werf."platforms.windows-x64"]
-checksum = "sha256:9add11025368cad2b97e8f5cf346031706582516d4e867ad9e1f3e14c85220ef"
-url = "https://tuf.werf.io/targets/releases/2.84.0/windows-amd64/bin/werf.exe"
 
 [[tools.yazi]]
 version = "26.9.1"
