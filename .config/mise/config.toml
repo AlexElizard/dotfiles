@@ -1,39 +1,9 @@
-min_version = "2026.11.6"
+min_version = "2026.11.9"
 
 ## [Configuration] #####################################################################
 [settings]
 experimental = true
 lockfile = true
-
-## [DevTools] ##########################################################################
-[tools]
-aube = "latest"
-btop = "latest"
-cliamp = "latest"
-fastfetch = "latest"
-fd = "latest"
-fnox = "latest"
-fzf = "latest"
-helm = "latest"
-helm-docs = "latest"
-herdr = "latest"
-lazygit = "latest"
-minikube = "latest"
-node = "26"
-pitchfork = "latest"
-python = "3.14"
-ripgrep = "latest"
-ruff = "latest"
-sshuttle = "latest"
-skim = "latest"
-superfile = "latest"
-task = "latest"
-usage = "latest"
-uv = "latest"
-yazi = "latest"
-zellij = "latest"
-"pypi:copier" = "latest"
-"pypi:sqlit-tui" = { version = "latest", extras = "clickhouse,postgres,mssql", python = "3.14" }
 
 ## [Bootstrap] #########################################################################
 [bootstrap.dnf.repos]
