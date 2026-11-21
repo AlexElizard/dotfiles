@@ -8,11 +8,41 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent": {
+    "default_profile": "ask",
     "default_model": {
-      "effort": "high",
       "provider": "openai-subscribed",
-      "model": "gpt-6.1-sol",
+      "model": "gpt-6.2-astra",
       "enable_thinking": true,
+      "effort": "high",
+    },
+    "inline_assistant_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-6.2-sol",
+      "enable_thinking": true,
+      "effort": "low",
+    },
+    "commit_message_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-6.1-terra",
+      "enable_thinking": true,
+      "effort": "low",
+    },
+    "commit_message_instructions": "Use the Conventional Commits format: <type>(<scope>): <description>.",
+    "thread_summary_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-6.1-terra",
+      "enable_thinking": true,
+      "effort": "low",
+    },
+    "auto_compact": {
+      "enabled": true,
+      "threshold": "85%",
+    },
+    "subagent_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-6.2-sol",
+      "enable_thinking": true,
+      "effort": "low",
     },
   },
   "auto_install_extensions": {
@@ -59,6 +89,79 @@
   "languages": {
     "Python": {
       "language_servers": ["ruff", "pyrefly"],
+    },
+  },
+  "language_models": {
+    "openai_compatible": {
+      "LiteLLM DNS": {
+        "api_url": "https://litellm.dns-shop.ru/v1",
+        "available_models": [
+          {
+            "name": "glm-5.3",
+            "display_name": "GLM-5.3",
+            "max_tokens": 1048576,
+            "max_output_tokens": 131072,
+            "reasoning_effort": "max",
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+              "interleaved_reasoning": true,
+              "max_tokens_parameter": true,
+            },
+          },
+          {
+            "name": "glm-5.3-flash",
+            "display_name": "GLM-5.3 Flash",
+            "max_tokens": 1048576,
+            "max_output_tokens": 131072,
+            "reasoning_effort": "high",
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+              "interleaved_reasoning": true,
+              "max_tokens_parameter": true,
+            },
+          },
+          {
+            "name": "glm-5-turbo",
+            "display_name": "GLM-5 Turbo",
+            "max_tokens": 200000,
+            "max_output_tokens": 131072,
+            "reasoning_effort": "high",
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+              "interleaved_reasoning": true,
+              "max_tokens_parameter": true,
+            },
+          },
+          {
+            "name": "qwen3.8-flash-next",
+            "display_name": "Qwen 3.8 Flash Next",
+            "max_tokens": 262144,
+            "max_output_tokens": 131072,
+            "reasoning_effort": null,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+              "interleaved_reasoning": true,
+              "max_tokens_parameter": true,
+            },
+          },
+        ],
+      },
     },
   },
   "lsp": {
