@@ -1,11 +1,11 @@
 services:
   clickstack:
     image: clickhouse/clickstack-all-in-one:latest
-    # image: clickhouse/clickstack-local:latest
-    # environment:
-    #   # Включение поддержки JSON (https://clickhouse.com/docs/use-cases/observability/clickstack/ingesting-data/schema/map-vs-json)
-    #   OTEL_AGENT_FEATURE_GATE_ARG: "--feature-gates=clickhouse.json" # OTel Collector
-    #   BETA_CH_OTEL_JSON_SCHEMA_ENABLED: true # HyperDX UI
+    environment:
+      INGESTION_API_KEY: "clickstack"
+    # # JSON Support (https://clickhouse.com/docs/use-cases/observability/clickstack/ingesting-data/schema/map-vs-json)
+    # OTEL_AGENT_FEATURE_GATE_ARG: "--feature-gates=clickhouse.json" # OTel Collector
+    # BETA_CH_OTEL_JSON_SCHEMA_ENABLED: true # HyperDX UI
     ports:
       - "8080:8080" # HyperDX UI
       - "4317:4317" # OTel Collector: OTLP gRPC
